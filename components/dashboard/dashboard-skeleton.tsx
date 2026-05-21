@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const pulse = {
   animate: { opacity: [0.35, 0.7, 0.35] },
-  transition: { duration: 1.6, repeat: Infinity, ease: "easeInOut" },
+  transition: { duration: 1.6, repeat: Infinity, ease: "easeInOut" as const },
 };
 
 export function DashboardSkeleton() {
