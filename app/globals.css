@@ -130,3 +130,13 @@
     @apply font-sans;
   }
 }
+
+@layer utilities {
+  .glass-panel {
+    @apply rounded-2xl border border-white/10 bg-card/60 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl;
+  }
+
+  .dashboard-grid {
+    @apply grid gap-6;
+  }
+}
