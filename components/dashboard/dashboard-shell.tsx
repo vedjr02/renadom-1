@@ -43,9 +43,9 @@ export function DashboardShell() {
     <AnimatePresence mode="wait">
       <motion.main
         key="dashboard"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.45 }}
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         className="mx-auto w-full max-w-[1480px] flex-1 px-4 py-8 sm:px-10 sm:py-10 lg:px-14"
       >
         <motion.div custom={0} variants={sectionVariants} initial="hidden" animate="visible">
