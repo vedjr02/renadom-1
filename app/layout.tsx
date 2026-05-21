@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono, Syne } from "next/font/google";
 import { AmbientBackground } from "@/components/dashboard/ambient-background";
+import { CursorGlow } from "@/components/dashboard/cursor-glow";
 import "./globals.css";
 
 const syne = Syne({
@@ -36,6 +37,7 @@ export default function RootLayout({
     >
       <body className="relative min-h-full flex flex-col overflow-x-hidden bg-background font-[family-name:var(--font-dm-sans)]">
         <AmbientBackground />
+        <CursorGlow />
         {children}
       </body>
     </html>
