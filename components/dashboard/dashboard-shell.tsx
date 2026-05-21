@@ -1,27 +1,71 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { ActiveOrdersTable } from "@/components/dashboard/active-orders-table";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
+import { DashboardSkeleton } from "@/components/dashboard/dashboard-skeleton";
 import { KpiScorecards } from "@/components/dashboard/kpi-scorecards";
 import { OrdersSlaChart } from "@/components/dashboard/orders-sla-chart";
 import { RevenueDonutChart } from "@/components/dashboard/revenue-donut-chart";
 import { useStoreSimulation } from "@/hooks/useStoreSimulation";
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.08 * index, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
 export function DashboardShell() {
-  const { kpis, hourlyTrend, revenueBreakdown, activeOrders, lastUpdated } =
-    useStoreSimulation();
+  const {
+    isReady,
+    kpis,
+    hourlyTrend,
+    revenueBreakdown,
+    activeOrders,
+    lastUpdated,
+  } = useStoreSimulation();
+
+  if (!isReady || !kpis) {
+    return <DashboardSkeleton />;
+  }
 
   return (
-    <main className="mx-auto w-full max-w-[1440px] flex-1 px-6 py-10 sm:px-10 lg:px-14">
-      <DashboardHeader />
-      <div className="dashboard-grid">
-        <KpiScorecards kpis={kpis} />
-        <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
-          <OrdersSlaChart data={hourlyTrend} />
-          <RevenueDonutChart data={revenueBreakdown} />
+    <AnimatePresence mode="wait">
+      <motion.main
+        key="dashboard"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.45 }}
+        className="mx-auto w-full max-w-[1480px] flex-1 px-6 py-10 sm:px-10 lg:px-14"
+      >
+        <motion.div custom={0} variants={sectionVariants} initial="hidden" animate="visible">
+          <DashboardHeader lastUpdated={lastUpdated} activeOrders={activeOrders.length} />
+        </motion.div>
+
+        <div className="dashboard-grid mt-8">
+          <motion.div custom={1} variants={sectionVariants} initial="hidden" animate="visible">
+            <KpiScorecards kpis={kpis} />
+          </motion.div>
+
+          <motion.div
+            custom={2}
+            variants={sectionVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid gap-6 xl:grid-cols-[1.65fr_1fr]"
+          >
+            <OrdersSlaChart data={hourlyTrend} />
+            <RevenueDonutChart data={revenueBreakdown} />
+          </motion.div>
+
+          <motion.div custom={3} variants={sectionVariants} initial="hidden" animate="visible">
+            <ActiveOrdersTable orders={activeOrders} lastUpdated={lastUpdated} />
+          </motion.div>
         </div>
-        <ActiveOrdersTable orders={activeOrders} lastUpdated={lastUpdated} />
-      </div>
-    </main>
+      </motion.main>
+    </AnimatePresence>
   );
 }
