@@ -179,4 +179,22 @@
       0 0 0 1px rgba(255, 255, 255, 0.06),
       0 0 40px rgba(34, 211, 238, 0.12);
   }
+
+  .shimmer-surface {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+    animation: shimmer 1.8s infinite;
+  }
 }
