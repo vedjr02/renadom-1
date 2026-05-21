@@ -10,7 +10,7 @@ const pulse = {
 export function DashboardSkeleton() {
   return (
     <main className="mx-auto w-full max-w-[1480px] flex-1 px-6 py-10 sm:px-10 lg:px-14">
-      <motion.div {...pulse} className="mb-10 h-28 rounded-3xl bg-white/[0.04]" />
+      <motion.div {...pulse} className="shimmer-surface mb-10 h-28 rounded-3xl bg-white/[0.04]" />
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {Array.from({ length: 4 }).map((_, index) => (
           <motion.div
