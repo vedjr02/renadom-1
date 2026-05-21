@@ -3,6 +3,7 @@
 import { SparkAreaChart } from "@tremor/react";
 import { motion } from "framer-motion";
 import { Clock3, Package, Trash2, TrendingUp } from "lucide-react";
+import { AnimatedNumber } from "@/components/ui/animated-number";
 import type { KpiSnapshot } from "@/lib/simulation/types";
 
 interface KpiScorecardsProps {
@@ -16,7 +17,8 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
   const cards = [
     {
       label: "SLA Compliance",
-      value: `${kpis.slaComplianceRate}%`,
+      value: kpis.slaComplianceRate,
+      format: (n: number) => `${n.toFixed(1)}%`,
       delta: "+0.8 vs last hour",
       icon: TrendingUp,
       accent: "text-cyan-300",
@@ -27,7 +29,8 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
     },
     {
       label: "Avg Picker Time",
-      value: `${kpis.avgPickerTimeSec}s`,
+      value: kpis.avgPickerTimeSec,
+      format: (n: number) => `${Math.round(n)}s`,
       delta: "Pick-to-pack median",
       icon: Clock3,
       accent: "text-emerald-300",
@@ -38,7 +41,8 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
     },
     {
       label: "Inventory Waste",
-      value: `$${kpis.inventoryWasteCost.toLocaleString("en-US")}`,
+      value: kpis.inventoryWasteCost,
+      format: (n: number) => `$${Math.round(n).toLocaleString("en-US")}`,
       delta: "Shift spoilage cost",
       icon: Trash2,
       accent: "text-amber-300",
@@ -49,7 +53,8 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
     },
     {
       label: "Active Orders",
-      value: kpis.activeOrders.toString(),
+      value: kpis.activeOrders,
+      format: (n: number) => `${Math.round(n)}`,
       delta: "Live in 3 zones",
       icon: Package,
       accent: "text-violet-300",
@@ -81,9 +86,11 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
                 <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/45">
                   {card.label}
                 </p>
-                <p className="mt-3 font-[family-name:var(--font-syne)] text-3xl font-bold tracking-tight text-white">
-                  {card.value}
-                </p>
+                <AnimatedNumber
+                  value={card.value}
+                  format={card.format}
+                  className="mt-3 block font-[family-name:var(--font-syne)] text-3xl font-bold tracking-tight text-white"
+                />
                 <p className="mt-1 text-xs text-white/45">{card.delta}</p>
               </div>
               <div className={`rounded-2xl border border-white/10 bg-white/[0.04] p-3 ${card.accent}`}>
