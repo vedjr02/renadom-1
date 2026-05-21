@@ -14,7 +14,11 @@ const sectionVariants = {
   visible: (index: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.08 * index, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      delay: 0.08 * index,
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
   }),
 };
 
