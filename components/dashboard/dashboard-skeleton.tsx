@@ -21,11 +21,21 @@ export function DashboardSkeleton() {
           />
         ))}
       </div>
-      <div className="mt-6 grid gap-6 xl:grid-cols-[1.65fr_1fr]">
-        <motion.div {...pulse} className="h-96 rounded-2xl bg-white/[0.04]" />
-        <motion.div {...pulse} className="h-96 rounded-2xl bg-white/[0.04]" />
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <motion.div
+            key={`zone-${index}`}
+            {...pulse}
+            transition={{ ...pulse.transition, delay: index * 0.06 }}
+            className="shimmer-surface h-36 rounded-2xl bg-white/[0.04]"
+          />
+        ))}
       </div>
-      <motion.div {...pulse} className="mt-6 h-80 rounded-2xl bg-white/[0.04]" />
+      <div className="mt-6 grid gap-6 xl:grid-cols-[1.65fr_1fr]">
+        <motion.div {...pulse} className="shimmer-surface h-96 rounded-2xl bg-white/[0.04]" />
+        <motion.div {...pulse} className="shimmer-surface h-96 rounded-2xl bg-white/[0.04]" />
+      </div>
+      <motion.div {...pulse} className="shimmer-surface mt-6 h-80 rounded-2xl bg-white/[0.04]" />
     </main>
   );
 }
