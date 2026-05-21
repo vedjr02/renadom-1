@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { ActiveOrdersTable } from "@/components/dashboard/active-orders-table";
+import { DashboardFooter } from "@/components/dashboard/dashboard-footer";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
 import { DashboardSkeleton } from "@/components/dashboard/dashboard-skeleton";
 import { KpiScorecards } from "@/components/dashboard/kpi-scorecards";
@@ -68,6 +69,8 @@ export function DashboardShell() {
           <motion.div custom={3} variants={sectionVariants} initial="hidden" animate="visible">
             <ActiveOrdersTable orders={activeOrders} lastUpdated={lastUpdated} />
           </motion.div>
+
+          <DashboardFooter lastUpdated={lastUpdated} />
         </div>
       </motion.main>
     </AnimatePresence>
