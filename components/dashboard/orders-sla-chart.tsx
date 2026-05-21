@@ -39,7 +39,11 @@ export function OrdersSlaChart({ data }: OrdersSlaChartProps) {
 
       <div className="h-80 w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+          <ComposedChart
+            key={data[data.length - 1]?.hour}
+            data={data}
+            margin={{ top: 8, right: 8, left: 0, bottom: 0 }}
+          >
             <defs>
               <linearGradient id="ordersFill" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="rgba(34,211,238,0.35)" />
