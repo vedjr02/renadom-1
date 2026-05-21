@@ -1,7 +1,8 @@
 {
-  "name": "random",
+  "name": "qcommerce-analytics-engine",
   "version": "0.1.0",
   "private": true,
+  "description": "Q-Commerce Dark Store Profitability & SLA Analytics Engine",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
