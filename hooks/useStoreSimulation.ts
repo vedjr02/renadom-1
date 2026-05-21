@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import { SIMULATION_TICK_MS, SLA_DEADLINE_MS } from "@/lib/simulation/constants";
 import {
+  deriveZoneLoads,
   generateHourlyTrend,
   generateInitialKpis,
   generateInitialOrders,
+  generateInitialZoneLoads,
   generateRevenueBreakdown,
   nudgeCategoryRevenue,
   spawnActiveOrder,
@@ -26,6 +28,7 @@ const buildInitialState = (): StoreSimulationState => ({
   hourlyTrend: generateHourlyTrend(),
   revenueBreakdown: generateRevenueBreakdown(),
   activeOrders: generateInitialOrders(),
+  zoneLoads: generateInitialZoneLoads(),
   lastUpdated: Date.now(),
 });
 
@@ -99,6 +102,7 @@ const tickSimulation = (prev: StoreSimulationState): StoreSimulationState => {
       completedCategory,
     ),
     activeOrders: orders,
+    zoneLoads: deriveZoneLoads(orders),
     lastUpdated: now,
   };
 };
@@ -152,6 +156,7 @@ export const useStoreSimulation = () => {
     hourlyTrend: state?.hourlyTrend ?? [],
     revenueBreakdown: state?.revenueBreakdown ?? [],
     activeOrders: state?.activeOrders ?? [],
+    zoneLoads: state?.zoneLoads ?? [],
     lastUpdated: state?.lastUpdated ?? 0,
     slaDeadlineMs: SLA_DEADLINE_MS,
   };
