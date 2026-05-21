@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono, Syne } from "next/font/google";
+import { AmbientBackground } from "@/components/dashboard/ambient-background";
 import "./globals.css";
 
 const syne = Syne({
@@ -34,10 +35,7 @@ export default function RootLayout({
       className={`dark ${syne.variable} ${dmSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="relative min-h-full flex flex-col overflow-x-hidden bg-background font-[family-name:var(--font-dm-sans)]">
-        <div
-          aria-hidden
-          className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,oklch(0.35_0.08_195/35%),transparent)]"
-        />
+        <AmbientBackground />
         {children}
       </body>
     </html>
