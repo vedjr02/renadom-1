@@ -17,7 +17,7 @@ export function DashboardSkeleton() {
             key={index}
             {...pulse}
             transition={{ ...pulse.transition, delay: index * 0.08 }}
-            className="h-44 rounded-2xl bg-white/[0.04]"
+            className="shimmer-surface h-44 rounded-2xl bg-white/[0.04]"
           />
         ))}
       </div>
