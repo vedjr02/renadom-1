@@ -28,12 +28,11 @@ export const generateHourlyTrend = (): HourlyMetric[] => {
     const hour = new Date(now.getTime() - (11 - index) * 60 * 60 * 1000);
     const ordersProcessed = Math.round(randomBetween(38, 92));
     const slaBreaches = Math.round(ordersProcessed * randomBetween(0.02, 0.12));
+    const h = hour.getHours().toString().padStart(2, "0");
+    const m = hour.getMinutes().toString().padStart(2, "0");
 
     return {
-      hour: hour.toLocaleTimeString("en-IE", {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
+      hour: `${h}:${m}`,
       ordersProcessed,
       slaBreaches,
     };
