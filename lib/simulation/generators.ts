@@ -10,6 +10,7 @@ import type {
   KpiSnapshot,
   OrderCategory,
   RevenueSlice,
+  ZoneLoadMetric,
 } from "./types";
 
 const randomBetween = (min: number, max: number) =>
@@ -88,3 +89,38 @@ export const nudgeCategoryRevenue = (
       ? { ...slice, value: slice.value + Math.round(randomBetween(40, 180)) }
       : slice,
   );
+
+const breachRiskFromUtilization = (
+  utilization: number,
+): ZoneLoadMetric["breachRisk"] => {
+  if (utilization >= 82) return "High";
+  if (utilization >= 58) return "Med";
+  return "Low";
+};
+
+export const deriveZoneLoads = (orders: ActiveOrder[]): ZoneLoadMetric[] =>
+  WAREHOUSE_ZONES.map((zone) => {
+    const ordersInZone = orders.filter((order) => order.zone === zone).length;
+    const breachedInZone = orders.filter(
+      (order) => order.zone === zone && order.breached,
+    ).length;
+    const utilization = Math.min(
+      98,
+      Math.round(ordersInZone * 11 + breachedInZone * 9 + randomBetween(8, 24)),
+    );
+
+    return {
+      zone,
+      utilization,
+      ordersInZone,
+      breachRisk: breachRiskFromUtilization(utilization),
+    };
+  });
+
+export const generateInitialZoneLoads = (): ZoneLoadMetric[] =>
+  WAREHOUSE_ZONES.map((zone) => ({
+    zone,
+    utilization: Math.round(randomBetween(42, 88)),
+    ordersInZone: Math.round(randomBetween(3, 11)),
+    breachRisk: breachRiskFromUtilization(randomBetween(42, 88)),
+  }));
