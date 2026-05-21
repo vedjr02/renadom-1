@@ -34,10 +34,18 @@ export interface KpiSnapshot {
   ordersSparkline: number[];
 }
 
+export interface ZoneLoadMetric {
+  zone: WarehouseZone;
+  utilization: number;
+  ordersInZone: number;
+  breachRisk: "Low" | "Med" | "High";
+}
+
 export interface StoreSimulationState {
   kpis: KpiSnapshot;
   hourlyTrend: HourlyMetric[];
   revenueBreakdown: RevenueSlice[];
   activeOrders: ActiveOrder[];
+  zoneLoads: ZoneLoadMetric[];
   lastUpdated: number;
 }
