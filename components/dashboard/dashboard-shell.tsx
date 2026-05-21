@@ -8,6 +8,7 @@ import { DashboardSkeleton } from "@/components/dashboard/dashboard-skeleton";
 import { KpiScorecards } from "@/components/dashboard/kpi-scorecards";
 import { OrdersSlaChart } from "@/components/dashboard/orders-sla-chart";
 import { RevenueDonutChart } from "@/components/dashboard/revenue-donut-chart";
+import { ZoneHeatmapStrip } from "@/components/dashboard/zone-heatmap-strip";
 import { useStoreSimulation } from "@/hooks/useStoreSimulation";
 
 const sectionVariants = {
@@ -30,6 +31,7 @@ export function DashboardShell() {
     hourlyTrend,
     revenueBreakdown,
     activeOrders,
+    zoneLoads,
     lastUpdated,
   } = useStoreSimulation();
 
@@ -55,8 +57,12 @@ export function DashboardShell() {
             <KpiScorecards kpis={kpis} />
           </motion.div>
 
+          <motion.div custom={2} variants={sectionVariants} initial="hidden" animate="visible">
+            <ZoneHeatmapStrip zones={zoneLoads} />
+          </motion.div>
+
           <motion.div
-            custom={2}
+            custom={3}
             variants={sectionVariants}
             initial="hidden"
             animate="visible"
@@ -66,7 +72,7 @@ export function DashboardShell() {
             <RevenueDonutChart data={revenueBreakdown} />
           </motion.div>
 
-          <motion.div custom={3} variants={sectionVariants} initial="hidden" animate="visible">
+          <motion.div custom={4} variants={sectionVariants} initial="hidden" animate="visible">
             <ActiveOrdersTable orders={activeOrders} lastUpdated={lastUpdated} />
           </motion.div>
 
