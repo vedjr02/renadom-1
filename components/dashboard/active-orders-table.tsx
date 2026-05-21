@@ -120,7 +120,7 @@ export function ActiveOrdersTable({ orders, lastUpdated }: ActiveOrdersTableProp
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-white/[0.06]">
+      <div className="overflow-x-auto rounded-2xl border border-white/[0.06] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <Table>
           <TableHeader>
             <TableRow className="border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.02]">
