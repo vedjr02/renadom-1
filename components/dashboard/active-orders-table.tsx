@@ -121,7 +121,7 @@ export function ActiveOrdersTable({ orders, lastUpdated }: ActiveOrdersTableProp
       </div>
 
       <div className="overflow-x-auto rounded-2xl border border-white/[0.06] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <Table>
+        <Table className="min-w-[720px]">
           <TableHeader>
             <TableRow className="border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.02]">
               <TableHead className="text-white/45">Order ID</TableHead>
