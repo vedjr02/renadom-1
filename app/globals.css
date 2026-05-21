@@ -134,6 +134,11 @@
     background: rgba(34, 211, 238, 0.25);
     color: white;
   }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+  }
 }
 
 @layer utilities {
