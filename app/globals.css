@@ -217,6 +217,9 @@
   .font-display {
     @apply font-[family-name:var(--font-syne)];
   }
+  .font-body {
+    @apply font-[family-name:var(--font-dm-sans)];
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
