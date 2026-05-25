@@ -193,6 +193,9 @@
   .surface-muted {
     @apply rounded-2xl border border-white/[0.06] bg-white/[0.03];
   }
+  .border-subtle {
+    @apply border border-white/[0.08];
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
