@@ -211,6 +211,9 @@
   .shadow-panel {
     @apply shadow-[0_20px_60px_rgba(0,0,0,0.35)];
   }
+  .backdrop-panel {
+    @apply backdrop-blur-2xl;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
