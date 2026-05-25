@@ -196,6 +196,9 @@
   .border-subtle {
     @apply border border-white/[0.08];
   }
+  .text-subtle {
+    @apply text-white/45;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
