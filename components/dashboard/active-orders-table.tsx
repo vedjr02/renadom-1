@@ -15,6 +15,7 @@ import {
   getSlaProgress,
 } from "@/hooks/useStoreSimulation";
 import { PanelHeader } from "@/components/dashboard/panel-header";
+import { categoryColors } from "@/lib/dashboard/category-colors";
 import type { ActiveOrder } from "@/lib/simulation/types";
 
 interface ActiveOrdersTableProps {
@@ -65,7 +66,7 @@ function OrderRow({
       <TableCell className="py-4 text-sm text-white/80">{order.zone}</TableCell>
       <TableCell className="py-4 text-sm text-white/80">{order.picker}</TableCell>
       <TableCell className="py-4">
-        <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-white/55">
+        <span className={`rounded-full border px-2.5 py-1 text-xs ${categoryColors[order.category]}`}>
           {order.category}
         </span>
       </TableCell>
