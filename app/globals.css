@@ -226,6 +226,9 @@
   .accent-cyan {
     @apply text-cyan-300;
   }
+  .accent-violet {
+    @apply text-violet-300;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
