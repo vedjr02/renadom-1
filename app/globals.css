@@ -232,6 +232,9 @@
   .accent-emerald {
     @apply text-emerald-300;
   }
+  .accent-amber {
+    @apply text-amber-300;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
