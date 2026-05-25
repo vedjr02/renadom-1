@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLiveClock } from "@/hooks/useLiveClock";
+import { StatPill } from "@/components/dashboard/stat-pill";
 import { formatHourLabel } from "@/hooks/useStoreSimulation";
 
 interface DashboardHeaderProps {
@@ -66,6 +67,16 @@ export function DashboardHeader({
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.12 }}
+          className="flex flex-col gap-3 xl:min-w-[220px]"
+        >
+          <StatPill label="Active Orders" value={activeOrders.toString()} />
+          <StatPill label="Last Sync" value={formatHourLabel(lastUpdated || now)} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.14 }}
           className="grid gap-3 sm:grid-cols-3 xl:min-w-[420px]"
         >
           {zones.map((zone, index) => (
