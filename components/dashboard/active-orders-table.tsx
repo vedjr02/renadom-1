@@ -14,6 +14,7 @@ import {
   formatSlaCountdown,
   getSlaProgress,
 } from "@/hooks/useStoreSimulation";
+import { PanelHeader } from "@/components/dashboard/panel-header";
 import type { ActiveOrder } from "@/lib/simulation/types";
 
 interface ActiveOrdersTableProps {
