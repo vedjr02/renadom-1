@@ -16,6 +16,7 @@ import {
 } from "@/hooks/useStoreSimulation";
 import { PanelHeader } from "@/components/dashboard/panel-header";
 import { categoryColors } from "@/lib/dashboard/category-colors";
+import { pickerInitials } from "@/lib/dashboard/picker-initials";
 import { priorityStyles } from "@/lib/dashboard/priority-styles" from "@/lib/dashboard/category-colors";
 import type { ActiveOrder } from "@/lib/simulation/types";
 
