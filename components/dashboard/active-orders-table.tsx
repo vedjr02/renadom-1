@@ -66,7 +66,14 @@ function OrderRow({
         {order.id}
       </TableCell>
       <TableCell className="py-4 text-sm text-white/80">{order.zone}</TableCell>
-      <TableCell className="py-4 text-sm text-white/80">{order.picker}</TableCell>
+      <TableCell className="py-4">
+        <div className="flex items-center gap-2">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-[10px] font-semibold text-cyan-200/90">
+            {pickerInitials(order.picker)}
+          </span>
+          <span className="text-sm text-white/80">{order.picker}</span>
+        </div>
+      </TableCell>
       <TableCell className="py-4">
         <span className={`rounded-full border px-2.5 py-1 text-xs ${categoryColors[order.category]}`}>
           {order.category}
