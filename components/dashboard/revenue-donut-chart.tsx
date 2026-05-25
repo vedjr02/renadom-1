@@ -2,6 +2,7 @@
 
 import { DonutChart, Legend } from "@tremor/react";
 import { motion } from "framer-motion";
+import { PanelHeader } from "@/components/dashboard/panel-header";
 import type { RevenueSlice } from "@/lib/simulation/types";
 
 interface RevenueDonutChartProps {
@@ -17,12 +18,11 @@ export function RevenueDonutChart({ data }: RevenueDonutChartProps) {
       transition={{ duration: 0.25 }}
       className="glass-panel glow-ring relative flex h-full flex-col p-6"
     >
-      <div className="mb-2 space-y-1">
-        <h2 className="font-[family-name:var(--font-syne)] text-xl font-semibold tracking-tight text-white">
-          Revenue Breakdown
-        </h2>
-        <p className="text-sm text-white/45">Category contribution mix</p>
-      </div>
+      <PanelHeader
+        title="Revenue Breakdown"
+        subtitle="Category contribution mix"
+        badge="Shift"
+      />
 
       <div className="relative flex flex-1 items-center justify-center">
         <DonutChart
