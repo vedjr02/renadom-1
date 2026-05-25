@@ -12,6 +12,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { PanelHeader } from "@/components/dashboard/panel-header";
 import type { HourlyMetric } from "@/lib/simulation/types";
 
 interface OrdersSlaChartProps {
@@ -25,17 +26,11 @@ export function OrdersSlaChart({ data }: OrdersSlaChartProps) {
       transition={{ duration: 0.25 }}
       className="glass-panel glow-ring flex h-full flex-col p-6"
     >
-      <div className="mb-6 flex items-start justify-between gap-4">
-        <div className="space-y-1">
-          <h2 className="font-[family-name:var(--font-syne)] text-xl font-semibold tracking-tight text-white">
-            Orders vs. SLA Breaches
-          </h2>
-          <p className="text-sm text-white/45">Rolling 12-hour throughput overlay</p>
-        </div>
-        <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-cyan-200/80">
-          Live
-        </span>
-      </div>
+      <PanelHeader
+        title="Orders vs. SLA Breaches"
+        subtitle="Rolling 12-hour throughput overlay"
+        badge="Live"
+      />
 
       <div className="h-80 w-full">
         <ResponsiveContainer width="100%" height="100%">
