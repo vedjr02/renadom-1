@@ -1,4 +1,4 @@
-import type { OrderCategory, WarehouseZone } from "./types";
+import type { OrderCategory, OrderPriority, WarehouseZone } from "./types";
 
 export const SLA_DEADLINE_MS = 10 * 60 * 1000;
 
@@ -13,6 +13,8 @@ export const ORDER_CATEGORIES: OrderCategory[] = [
   "Electronics",
   "FMCG",
 ];
+
+export const ORDER_PRIORITIES: OrderPriority[] = ["Standard", "Express", "VIP"];
 
 export const PICKER_NAMES = [
   "Maya Chen",
