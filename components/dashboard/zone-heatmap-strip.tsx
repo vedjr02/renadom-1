@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AnimatedNumber } from "@/components/ui/animated-number";
+import { zoneAccentColors } from "@/lib/dashboard/zone-colors";
 import type { ZoneLoadMetric } from "@/lib/simulation/types";
 
 interface ZoneHeatmapStripProps {
@@ -27,7 +28,7 @@ export function ZoneHeatmapStrip({ zones }: ZoneHeatmapStripProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.05 * index, duration: 0.4 }}
           whileHover={{ scale: 1.02 }}
-          className="glass-panel relative overflow-hidden p-5"
+          className={`glass-panel relative overflow-hidden p-5 bg-gradient-to-br ${zoneAccentColors[zone.zone]}`}
         >
           <div className="flex items-center justify-between gap-3">
             <div>
