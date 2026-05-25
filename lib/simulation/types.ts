@@ -2,11 +2,14 @@ export type WarehouseZone = "Zone A — Cold Chain" | "Zone B — Ambient" | "Zo
 
 export type OrderCategory = "Groceries" | "Electronics" | "FMCG";
 
+export type OrderPriority = "Standard" | "Express" | "VIP";
+
 export interface ActiveOrder {
   id: string;
   zone: WarehouseZone;
   picker: string;
   category: OrderCategory;
+  priority: OrderPriority;
   startedAt: number;
   slaDeadlineMs: number;
   breached: boolean;
