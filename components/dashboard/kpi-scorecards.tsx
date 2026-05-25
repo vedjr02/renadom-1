@@ -4,6 +4,7 @@ import { SparkAreaChart } from "@tremor/react";
 import { motion } from "framer-motion";
 import { Clock3, Package, Trash2, TrendingUp } from "lucide-react";
 import { AnimatedNumber } from "@/components/ui/animated-number";
+import { formatCurrency, formatDuration, formatPercent } from "@/lib/formatters";
 import type { KpiSnapshot } from "@/lib/simulation/types";
 
 interface KpiScorecardsProps {
@@ -18,7 +19,7 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
     {
       label: "SLA Compliance",
       value: kpis.slaComplianceRate,
-      format: (n: number) => `${n.toFixed(1)}%`,
+      format: (n: number) => formatPercent(n),
       delta: "+0.8 vs last hour",
       icon: TrendingUp,
       accent: "text-cyan-300",
@@ -30,7 +31,7 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
     {
       label: "Avg Picker Time",
       value: kpis.avgPickerTimeSec,
-      format: (n: number) => `${Math.round(n)}s`,
+      format: (n: number) => formatDuration(n),
       delta: "Pick-to-pack median",
       icon: Clock3,
       accent: "text-emerald-300",
@@ -42,7 +43,7 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
     {
       label: "Inventory Waste",
       value: kpis.inventoryWasteCost,
-      format: (n: number) => `$${Math.round(n).toLocaleString("en-US")}`,
+      format: (n: number) => formatCurrency(n),
       delta: "Shift spoilage cost",
       icon: Trash2,
       accent: "text-amber-300",
