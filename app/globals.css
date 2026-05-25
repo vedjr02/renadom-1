@@ -229,6 +229,9 @@
   .accent-violet {
     @apply text-violet-300;
   }
+  .accent-emerald {
+    @apply text-emerald-300;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
