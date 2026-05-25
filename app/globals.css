@@ -190,6 +190,9 @@
   .panel-divider {
     @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
   }
+  .surface-muted {
+    @apply rounded-2xl border border-white/[0.06] bg-white/[0.03];
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
