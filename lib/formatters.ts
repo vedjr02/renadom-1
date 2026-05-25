@@ -3,3 +3,4 @@ export const formatCurrency = (value: number): string =>
 
 export const formatPercent = (value: number, digits = 1): string =>
   `${value.toFixed(digits)}%`;
+export const formatDuration = (seconds: number): string => `${Math.round(seconds)}s`;
