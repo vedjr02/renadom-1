@@ -187,6 +187,9 @@
   .metric-label {
     @apply text-[11px] font-medium uppercase tracking-[0.22em] text-white/45;
   }
+  .panel-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
