@@ -184,6 +184,9 @@
     @apply relative overflow-hidden;
   }
 
+  .metric-label {
+    @apply text-[11px] font-medium uppercase tracking-[0.22em] text-white/45;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
