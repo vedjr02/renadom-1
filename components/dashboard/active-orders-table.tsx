@@ -17,7 +17,7 @@ import {
 import { PanelHeader } from "@/components/dashboard/panel-header";
 import { categoryColors } from "@/lib/dashboard/category-colors";
 import { pickerInitials } from "@/lib/dashboard/picker-initials";
-import { priorityStyles } from "@/lib/dashboard/priority-styles" from "@/lib/dashboard/category-colors";
+import { priorityStyles } from "@/lib/dashboard/priority-styles";
 import type { ActiveOrder } from "@/lib/simulation/types";
 
 interface ActiveOrdersTableProps {
@@ -78,6 +78,7 @@ function OrderRow({
         <span className={`rounded-full border px-2.5 py-1 text-xs ${categoryColors[order.category]}`}>
           {order.category}
         </span>
+      </TableCell>
       <TableCell className="py-4">
         <span className={`rounded-full border px-2.5 py-1 text-xs ${priorityStyles[order.priority]}`}>
           {order.priority}
