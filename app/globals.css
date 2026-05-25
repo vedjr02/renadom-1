@@ -223,6 +223,9 @@
   .ring-subtle {
     @apply ring-1 ring-white/10;
   }
+  .accent-cyan {
+    @apply text-cyan-300;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
