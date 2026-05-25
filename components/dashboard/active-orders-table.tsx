@@ -123,6 +123,7 @@ export function ActiveOrdersTable({ orders, lastUpdated }: ActiveOrdersTableProp
               <TableHead className="text-white/45">Zone</TableHead>
               <TableHead className="text-white/45">Picker</TableHead>
               <TableHead className="text-white/45">Category</TableHead>
+              <TableHead className="text-white/45">Priority</TableHead>
               <TableHead className="text-white/45">SLA Timer</TableHead>
             </TableRow>
           </TableHeader>
