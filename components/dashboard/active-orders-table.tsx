@@ -107,19 +107,11 @@ export function ActiveOrdersTable({ orders, lastUpdated }: ActiveOrdersTableProp
 
   return (
     <section className="glass-panel glow-ring overflow-hidden p-6">
-      <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div className="space-y-1">
-          <h2 className="font-[family-name:var(--font-syne)] text-xl font-semibold tracking-tight text-white">
-            Operational Drill-down
-          </h2>
-          <p className="text-sm text-white/45">
-            Active pick paths with live 10-minute SLA countdown
-          </p>
-        </div>
-        <p className="text-xs uppercase tracking-[0.22em] text-white/35">
-          {orders.length} orders tracked
-        </p>
-      </div>
+      <PanelHeader
+        title="Operational Drill-down"
+        subtitle="Active pick paths with live 10-minute SLA countdown"
+        badge={`${orders.length} tracked`}
+      />
 
       <div className="overflow-x-auto rounded-2xl border border-white/[0.06] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <Table className="min-w-[720px]">
