@@ -70,6 +70,10 @@ function OrderRow({
         <span className={`rounded-full border px-2.5 py-1 text-xs ${categoryColors[order.category]}`}>
           {order.category}
         </span>
+      <TableCell className="py-4">
+        <span className={`rounded-full border px-2.5 py-1 text-xs ${priorityStyles[order.priority]}`}>
+          {order.priority}
+        </span>
       </TableCell>
       <TableCell className="py-4">
         <div className="flex min-w-[140px] flex-col gap-2">
