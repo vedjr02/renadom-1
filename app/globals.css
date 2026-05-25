@@ -214,6 +214,9 @@
   .backdrop-panel {
     @apply backdrop-blur-2xl;
   }
+  .font-display {
+    @apply font-[family-name:var(--font-syne)];
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
