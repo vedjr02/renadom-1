@@ -199,6 +199,9 @@
   .text-subtle {
     @apply text-white/45;
   }
+  .text-strong {
+    @apply text-white/90;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
