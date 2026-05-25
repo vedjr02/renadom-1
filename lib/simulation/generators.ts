@@ -1,9 +1,5 @@
-import {
-  ORDER_CATEGORIES,
-  PICKER_NAMES,
-  SLA_DEADLINE_MS,
-  WAREHOUSE_ZONES,
-} from "./constants";
+import { ORDER_CATEGORIES, ORDER_PRIORITIES, PICKER_NAMES, SLA_DEADLINE_MS, WAREHOUSE_ZONES } from "./constants";
+import type { OrderPriority } from "./types";
 import type {
   ActiveOrder,
   HourlyMetric,
@@ -62,6 +58,13 @@ export const generateInitialKpis = (): KpiSnapshot => ({
   ordersSparkline: generateSparkline(24, 6),
 });
 
+const pickWeightedPriority = (): OrderPriority => {
+  const roll = Math.random();
+  if (roll > 0.92) return "VIP";
+  if (roll > 0.72) return "Express";
+  return "Standard";
+};
+
 export const spawnActiveOrder = (): ActiveOrder => {
   const startedAt =
     Date.now() - Math.round(randomBetween(0, SLA_DEADLINE_MS * 0.85));
@@ -71,6 +74,7 @@ export const spawnActiveOrder = (): ActiveOrder => {
     zone: pickRandom(WAREHOUSE_ZONES),
     picker: pickRandom(PICKER_NAMES),
     category: pickRandom(ORDER_CATEGORIES),
+    priority: pickWeightedPriority(),
     startedAt,
     slaDeadlineMs: SLA_DEADLINE_MS,
     breached: false,
