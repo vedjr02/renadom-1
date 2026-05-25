@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { BreachAlertBanner } from "@/components/dashboard/breach-alert-banner";
 import { ActiveOrdersTable } from "@/components/dashboard/active-orders-table";
 import { DashboardFooter } from "@/components/dashboard/dashboard-footer";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
@@ -9,6 +10,7 @@ import { KpiScorecards } from "@/components/dashboard/kpi-scorecards";
 import { OrdersSlaChart } from "@/components/dashboard/orders-sla-chart";
 import { RevenueDonutChart } from "@/components/dashboard/revenue-donut-chart";
 import { ZoneHeatmapStrip } from "@/components/dashboard/zone-heatmap-strip";
+import { countBreachedOrders } from "@/lib/simulation/selectors";
 import { useStoreSimulation } from "@/hooks/useStoreSimulation";
 
 const sectionVariants = {
@@ -52,7 +54,9 @@ export function DashboardShell() {
           <DashboardHeader lastUpdated={lastUpdated} activeOrders={activeOrders.length} />
         </motion.div>
 
-        <div className="dashboard-grid mt-8">
+        <BreachAlertBanner breachCount={countBreachedOrders(activeOrders)} />
+
+        <div className="dashboard-grid mt-2">
           <motion.div custom={1} variants={sectionVariants} initial="hidden" animate="visible">
             <KpiScorecards kpis={kpis} />
           </motion.div>
