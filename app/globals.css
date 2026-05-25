@@ -235,6 +235,9 @@
   .accent-amber {
     @apply text-amber-300;
   }
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-0.5;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
