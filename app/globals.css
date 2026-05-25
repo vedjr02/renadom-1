@@ -220,6 +220,9 @@
   .font-body {
     @apply font-[family-name:var(--font-dm-sans)];
   }
+  .ring-subtle {
+    @apply ring-1 ring-white/10;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
