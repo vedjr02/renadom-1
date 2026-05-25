@@ -205,6 +205,9 @@
   .tracking-caps {
     @apply uppercase tracking-[0.24em];
   }
+  .rounded-panel {
+    @apply rounded-2xl;
+  }
   .shimmer-surface::after {
     content: "";
     position: absolute;
