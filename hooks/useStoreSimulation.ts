@@ -13,6 +13,7 @@ import {
   nudgeCategoryRevenue,
   spawnActiveOrder,
 } from "@/lib/simulation/generators";
+import { maybeAdvanceStatus } from "@/lib/simulation/order-status";
 import type { ActiveOrder, StoreSimulationState } from "@/lib/simulation/types";
 
 const randomBetween = (min: number, max: number) =>
@@ -35,7 +36,10 @@ const buildInitialState = (): StoreSimulationState => ({
 
 const tickSimulation = (prev: StoreSimulationState): StoreSimulationState => {
   const now = Date.now();
-  let orders = withBreachedFlags(prev.activeOrders, now);
+  let orders = withBreachedFlags(prev.activeOrders, now).map((order) => ({
+    ...order,
+    status: maybeAdvanceStatus(order.status),
+  }));
 
   if (Math.random() > 0.35) {
     orders = [...orders, spawnActiveOrder()];
