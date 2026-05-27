@@ -21,3 +21,6 @@ export const getAverageUtilization = (zones: { utilization: number }[]): number 
   if (!zones.length) return 0;
   return zones.reduce((sum, zone) => sum + zone.utilization, 0) / zones.length;
 };
+
+export const countStandardOrders = (orders: ActiveOrder[]): number =>
+  orders.filter((order) => order.priority === "Standard").length;
