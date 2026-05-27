@@ -28,3 +28,9 @@ export const countStandardOrders = (orders: ActiveOrder[]): number =>
 
 export const countByStatus = (orders: ActiveOrder[], status: ActiveOrder["status"]): number =>
   orders.filter((order) => order.status === status).length;
+
+export const getFulfillmentMix = (orders: ActiveOrder[]) => ({
+  picking: countByStatus(orders, "Picking"),
+  packing: countByStatus(orders, "Packing"),
+  dispatch: countByStatus(orders, "Dispatch"),
+});
