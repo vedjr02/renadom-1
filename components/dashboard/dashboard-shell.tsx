@@ -21,7 +21,7 @@ import { ZoneFilterTabs } from "@/components/dashboard/zone-filter-tabs";
 import { ZoneHeatmapStrip } from "@/components/dashboard/zone-heatmap-strip";
 import { applyOrderFilters } from "@/lib/dashboard/apply-order-filters";
 import { filterOrdersByZone } from "@/lib/dashboard/filter-orders";
-import { countBreachedOrders, getFulfillmentMix, getTotalRevenue } from "@/lib/simulation/selectors";
+import { countBreachedOrders, getFilterMatchRate, getFulfillmentMix, getTotalRevenue } from "@/lib/simulation/selectors";
 import { useLiveClock } from "@/hooks/useLiveClock";
 import { useShiftClock } from "@/hooks/useShiftClock";
 import { useSortedOrders, type OrderSortKey } from "@/hooks/useSortedOrders";
@@ -152,9 +152,9 @@ export function DashboardShell() {
               <OrderSearchInput value={query} onChange={setQuery} onClear={clear} />
               <OrderSortControls value={sortKey} onChange={setSortKey} />
             </div>
-            {hasQuery ? (
+            {hasQuery || priority !== "All" || category !== "All" || filter !== "All" ? (
               <p className="mb-3 text-xs text-white/40">
-                Showing {sortedOrders.length} result{sortedOrders.length === 1 ? "" : "s"} for current filters
+                Showing {sortedOrders.length} of {activeOrders.length} ({getFilterMatchRate(sortedOrders.length, activeOrders.length)}%) result{sortedOrders.length === 1 ? "" : "s"} for current filters
               </p>
             ) : null}
             <ActiveOrdersTable orders={sortedOrders} lastUpdated={lastUpdated} now={now} compact={compact} />
