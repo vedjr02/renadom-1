@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: "Q-Commerce Dark Store Analytics",
   description:
     "Live profitability and SLA analytics engine for dark store operations.",
+  keywords: ["Q-Commerce", "SLA", "Dark Store", "Analytics"],
 };
 
 export default function RootLayout({
