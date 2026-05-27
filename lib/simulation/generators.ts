@@ -1,10 +1,11 @@
-import { ORDER_CATEGORIES, ORDER_PRIORITIES, PICKER_NAMES, SLA_DEADLINE_MS, WAREHOUSE_ZONES } from "./constants";
+import { ORDER_CATEGORIES, ORDER_PRIORITIES, ORDER_STATUSES, PICKER_NAMES, SLA_DEADLINE_MS, WAREHOUSE_ZONES } from "./constants";
 import type { OrderPriority } from "./types";
 import type {
   ActiveOrder,
   HourlyMetric,
   KpiSnapshot,
   OrderCategory,
+  OrderStatus,
   RevenueSlice,
   ZoneLoadMetric,
 } from "./types";
@@ -75,6 +76,7 @@ export const spawnActiveOrder = (): ActiveOrder => {
     picker: pickRandom(PICKER_NAMES),
     category: pickRandom(ORDER_CATEGORIES),
     priority: pickWeightedPriority(),
+    status: pickRandom(ORDER_STATUSES),
     startedAt,
     slaDeadlineMs: SLA_DEADLINE_MS,
     breached: false,
