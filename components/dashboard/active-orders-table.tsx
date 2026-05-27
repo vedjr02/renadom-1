@@ -35,9 +35,11 @@ const MotionTableRow = motion.create(TableRow);
 function OrderRow({
   order,
   now,
+  compact,
 }: {
   order: ActiveOrder;
   now: number;
+  compact: boolean;
 }) {
   const countdown = formatSlaCountdown(order, now);
   const progress = getSlaProgress(order, now);
@@ -160,7 +162,7 @@ export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp, compact =
           <TableBody>
             <AnimatePresence initial={false}>
               {orders.map((order) => (
-                <OrderRow key={order.id} order={order} now={now} />
+                <OrderRow key={order.id} order={order} now={now} compact={compact} />
               ))}
             </AnimatePresence>
           </TableBody>
