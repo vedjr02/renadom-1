@@ -17,3 +17,9 @@ export const filterOrdersByQuery = (orders: ActiveOrder[], query: string): Activ
       order.category.toLowerCase().includes(q),
   );
 };
+
+export const filterOrdersByPriority = (
+  orders: ActiveOrder[],
+  priority: ActiveOrder["priority"] | "All",
+): ActiveOrder[] =>
+  priority === "All" ? orders : orders.filter((order) => order.priority === priority);
