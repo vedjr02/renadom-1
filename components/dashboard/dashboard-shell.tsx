@@ -76,7 +76,7 @@ export function DashboardShell() {
         className="mx-auto w-full max-w-[1480px] flex-1 px-4 py-8 sm:px-10 sm:py-10 lg:px-14"
       >
         <motion.div custom={0} variants={sectionVariants} initial="hidden" animate="visible">
-          <DashboardHeader lastUpdated={lastUpdated} activeOrders={activeOrders.length} />
+          <DashboardHeader lastUpdated={lastUpdated} activeOrders={activeOrders.length} paused={paused} />
         </motion.div>
 
         <motion.div custom={1} variants={sectionVariants} initial="hidden" animate="visible" className="mt-6">
