@@ -24,6 +24,7 @@ import type { ActiveOrder } from "@/lib/simulation/types";
 interface ActiveOrdersTableProps {
   orders: ActiveOrder[];
   lastUpdated: number;
+  now?: number;
 }
 
 const MotionTableRow = motion.create(TableRow);
@@ -116,8 +117,9 @@ function OrderRow({
   );
 }
 
-export function ActiveOrdersTable({ orders, lastUpdated }: ActiveOrdersTableProps) {
-  const now = useLiveClock(1000);
+export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp }: ActiveOrdersTableProps) {
+  const liveNow = useLiveClock(1000);
+  const now = nowProp ?? liveNow;
 
   void lastUpdated;
 
