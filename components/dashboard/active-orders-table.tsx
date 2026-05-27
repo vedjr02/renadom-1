@@ -26,6 +26,7 @@ interface ActiveOrdersTableProps {
   orders: ActiveOrder[];
   lastUpdated: number;
   now?: number;
+  compact?: boolean;
 }
 
 const MotionTableRow = motion.create(TableRow);
@@ -65,7 +66,7 @@ function OrderRow({
       }
       className="border-white/[0.06] hover:bg-white/[0.03]"
     >
-      <TableCell className="py-4 font-mono text-xs text-cyan-200/90">
+      <TableCell className={`${compact ? "py-2" : "py-4"} font-mono text-xs text-cyan-200/90`}>
         {order.id}
       </TableCell>
       <TableCell className="py-4 text-sm text-white/80">{order.zone}</TableCell>
@@ -124,7 +125,7 @@ function OrderRow({
   );
 }
 
-export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp }: ActiveOrdersTableProps) {
+export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp, compact = false }: ActiveOrdersTableProps) {
   const liveNow = useLiveClock(1000);
   const now = nowProp ?? liveNow;
 
