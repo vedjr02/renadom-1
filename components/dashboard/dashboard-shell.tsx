@@ -112,7 +112,11 @@ export function DashboardShell() {
                 />
               ) : null}
             </div>
-            <ZoneFilterTabs value={filter} onChange={setFilter} />
+            <div className="flex flex-col gap-3">
+              <ZoneFilterTabs value={filter} onChange={setFilter} />
+              <PriorityFilterTabs value={priority} onChange={setPriority} />
+              <CategoryFilterChips value={category} onChange={setCategory} />
+            </div>
           </DashboardToolbar>
         </motion.div>
 
