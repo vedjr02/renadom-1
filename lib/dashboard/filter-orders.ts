@@ -23,3 +23,9 @@ export const filterOrdersByPriority = (
   priority: ActiveOrder["priority"] | "All",
 ): ActiveOrder[] =>
   priority === "All" ? orders : orders.filter((order) => order.priority === priority);
+
+export const filterOrdersByCategory = (
+  orders: ActiveOrder[],
+  category: ActiveOrder["category"] | "All",
+): ActiveOrder[] =>
+  category === "All" ? orders : orders.filter((order) => order.category === category);
