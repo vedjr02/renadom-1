@@ -2,6 +2,7 @@
 
 import { DonutChart, Legend } from "@tremor/react";
 import { motion } from "framer-motion";
+import { RevenueDeltaBadge } from "@/components/dashboard/revenue-delta-badge";
 import { PanelHeader } from "@/components/dashboard/panel-header";
 import type { RevenueSlice } from "@/lib/simulation/types";
 
@@ -18,11 +19,14 @@ export function RevenueDonutChart({ data }: RevenueDonutChartProps) {
       transition={{ duration: 0.25 }}
       className="glass-panel glow-ring relative flex h-full flex-col p-6"
     >
-      <PanelHeader
-        title="Revenue Breakdown"
-        subtitle="Category contribution mix"
-        badge="Shift"
-      />
+      <div className="mb-2 flex items-start justify-between gap-3">
+        <PanelHeader
+          title="Revenue Breakdown"
+          subtitle="Category contribution mix"
+          badge="Shift"
+        />
+        <RevenueDeltaBadge delta={2.4} />
+      </div>
 
       <div className="relative flex flex-1 items-center justify-center">
         <DonutChart
