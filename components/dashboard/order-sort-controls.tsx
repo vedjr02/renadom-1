@@ -15,7 +15,7 @@ const options: { key: OrderSortKey; label: string }[] = [
 
 export function OrderSortControls({ value, onChange }: OrderSortControlsProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="font-body flex flex-wrap gap-2">
       {options.map((option) => (
         <button
           key={option.key}
