@@ -19,12 +19,16 @@ import { SimulationControls } from "@/components/dashboard/simulation-controls";
 import { ThroughputTicker } from "@/components/dashboard/throughput-ticker";
 import { ZoneFilterTabs } from "@/components/dashboard/zone-filter-tabs";
 import { ZoneHeatmapStrip } from "@/components/dashboard/zone-heatmap-strip";
+import { applyOrderFilters } from "@/lib/dashboard/apply-order-filters";
 import { filterOrdersByZone } from "@/lib/dashboard/filter-orders";
 import { countBreachedOrders, getTotalRevenue } from "@/lib/simulation/selectors";
 import { useLiveClock } from "@/hooks/useLiveClock";
 import { useShiftClock } from "@/hooks/useShiftClock";
 import { useSortedOrders, type OrderSortKey } from "@/hooks/useSortedOrders";
 import { useStoreSimulation } from "@/hooks/useStoreSimulation";
+import { useCategoryFilter } from "@/hooks/useCategoryFilter";
+import { usePriorityFilter } from "@/hooks/usePriorityFilter";
+import { useOrderSearch } from "@/hooks/useOrderSearch";
 import { useZoneFilter } from "@/hooks/useZoneFilter";
 
 const sectionVariants = {
@@ -54,11 +58,14 @@ export function DashboardShell() {
   } = useStoreSimulation();
 
   const { filter, setFilter } = useZoneFilter();
+  const { priority, setPriority } = usePriorityFilter();
+  const { category, setCategory } = useCategoryFilter();
+  const { query, setQuery, clear } = useOrderSearch();
   const [sortKey, setSortKey] = useState<OrderSortKey>("sla");
   const elapsedMinutes = useShiftClock();
   const now = useLiveClock(1000);
 
-  const filteredOrders = filterOrdersByZone(activeOrders, filter);
+  const filteredOrders = applyOrderFilters({ orders: activeOrders, zone: filter, priority, category, query });
   const sortedOrders = useSortedOrders(filteredOrders, sortKey, now);
   const latestHour = hourlyTrend[hourlyTrend.length - 1];
 
