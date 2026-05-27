@@ -1,4 +1,4 @@
-import type { OrderCategory, OrderPriority, WarehouseZone } from "./types";
+import type { OrderCategory, OrderPriority, OrderStatus, WarehouseZone } from "./types";
 
 export const SLA_DEADLINE_MS = 10 * 60 * 1000;
 
@@ -34,3 +34,5 @@ export const SHIFT_START_HOUR = 6;
 export const MAX_ACTIVE_ORDERS = 22;
 
 export const TICKS_PER_MINUTE = 30;
+
+export const ORDER_STATUSES: OrderStatus[] = ["Picking", "Packing", "Dispatch"];
