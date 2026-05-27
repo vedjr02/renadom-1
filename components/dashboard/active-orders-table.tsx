@@ -87,6 +87,9 @@ function OrderRow({
         </span>
       </TableCell>
       <TableCell className="py-4">
+        <OrderAgeCell startedAt={order.startedAt} now={now} />
+      </TableCell>
+      <TableCell className="py-4">
         <div className="flex min-w-[140px] flex-col gap-2">
           <div className="flex items-center justify-between gap-3">
             <span
@@ -132,7 +135,7 @@ export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp }: ActiveO
       />
 
       <div className="overflow-x-auto rounded-2xl border border-white/[0.06] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <Table className="min-w-[720px]">
+        <Table className="min-w-[820px]">
           <TableHeader>
             <TableRow className="border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.02]">
               <TableHead className="text-white/45">Order ID</TableHead>
@@ -140,6 +143,7 @@ export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp }: ActiveO
               <TableHead className="text-white/45">Picker</TableHead>
               <TableHead className="text-white/45">Category</TableHead>
               <TableHead className="text-white/45">Priority</TableHead>
+              <TableHead className="text-white/45">Age</TableHead>
               <TableHead className="text-white/45">SLA Timer</TableHead>
             </TableRow>
           </TableHeader>
