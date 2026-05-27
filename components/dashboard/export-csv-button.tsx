@@ -2,9 +2,10 @@
 
 interface ExportCsvButtonProps {
   disabled?: boolean;
+  onClick?: () => void;
 }
 
-export function ExportCsvButton({ disabled = false }: ExportCsvButtonProps) {
+export function ExportCsvButton({ disabled = false, onClick }: ExportCsvButtonProps) {
   return (
     <button aria-label="Export filtered orders as CSV label"
       type="button"
