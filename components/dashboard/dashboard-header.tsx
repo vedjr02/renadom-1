@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLiveClock } from "@/hooks/useLiveClock";
+import { OpsPulseIndicator } from "@/components/dashboard/ops-pulse-indicator";
 import { StatPill } from "@/components/dashboard/stat-pill";
 import { formatHourLabel } from "@/hooks/useStoreSimulation";
 
@@ -71,6 +72,7 @@ export function DashboardHeader({
           transition={{ delay: 0.12 }}
           className="glass-panel flex flex-col gap-3 xl:min-w-[220px]"
         >
+          <OpsPulseIndicator paused={paused} />
           <StatPill label="Active Orders" value={activeOrders.toString()} />
           <StatPill label="Last Sync" value={formatHourLabel(lastUpdated || now)} />
         </motion.div>
