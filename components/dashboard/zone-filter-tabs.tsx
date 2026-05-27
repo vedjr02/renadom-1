@@ -13,7 +13,7 @@ const tabs: ZoneFilter[] = ["All", ...WAREHOUSE_ZONES];
 
 export function ZoneFilterTabs({ value, onChange }: ZoneFilterTabsProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="font-body flex flex-wrap gap-2">
       {tabs.map((tab) => (
         <button
           key={tab}
