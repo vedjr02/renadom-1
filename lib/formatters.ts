@@ -15,3 +15,6 @@ export const formatShiftElapsed = (minutes: number): string => {
   const m = Math.round(minutes % 60);
   return h > 0 ? `${h}h ${m}m` : `${m}m`;
 };
+
+export const formatDelta = (value: number, suffix = ""): string =>
+  `${value >= 0 ? "+" : ""}${value.toFixed(1)}${suffix}`;
