@@ -13,7 +13,7 @@ export function BreachAlertBanner({ breachCount }: BreachAlertBannerProps) {
     <motion.div
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
-      className="mb-6 rounded-2xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-200/90"
+      className="rounded-panel mb-6 rounded-2xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-200/90"
     >
       {breachCount} active order{breachCount === 1 ? "" : "s"} currently breaching the 10-minute SLA.
     </motion.div>
