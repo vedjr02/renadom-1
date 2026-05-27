@@ -34,3 +34,6 @@ export const getFulfillmentMix = (orders: ActiveOrder[]) => ({
   packing: countByStatus(orders, "Packing"),
   dispatch: countByStatus(orders, "Dispatch"),
 });
+
+export const getFilterMatchRate = (filtered: number, total: number): number =>
+  total === 0 ? 0 : Number(((filtered / total) * 100).toFixed(1));
