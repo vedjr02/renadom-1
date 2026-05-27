@@ -8,6 +8,7 @@ import { formatHourLabel } from "@/hooks/useStoreSimulation";
 interface DashboardHeaderProps {
   lastUpdated: number;
   activeOrders: number;
+  paused?: boolean;
 }
 
 const zones = [
@@ -19,6 +20,7 @@ const zones = [
 export function DashboardHeader({
   lastUpdated,
   activeOrders,
+  paused = false,
 }: DashboardHeaderProps) {
   const now = useLiveClock(1000);
 
@@ -38,7 +40,7 @@ export function DashboardHeader({
               <span className="glass-panel absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-300 opacity-70" />
               <span className="glass-panel relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-300" />
             </span>
-            Live Dark Store Ops
+            {paused ? "Stream Paused" : "Live Dark Store Ops"}
           </motion.p>
 
           <motion.h1
