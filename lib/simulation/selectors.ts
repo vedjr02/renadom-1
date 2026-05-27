@@ -10,3 +10,6 @@ export const countActiveByZone = (
 
 export const countExpressOrders = (orders: ActiveOrder[]): number =>
   orders.filter((order) => order.priority !== "Standard").length;
+
+export const countVipOrders = (orders: ActiveOrder[]): number =>
+  orders.filter((order) => order.priority === "VIP").length;
