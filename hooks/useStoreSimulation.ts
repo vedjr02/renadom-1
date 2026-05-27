@@ -1,5 +1,6 @@
 "use client";
 
+import { useSimulationPause } from "@/hooks/useSimulationPause";
 import { useEffect, useState } from "react";
 import { SIMULATION_TICK_MS, SLA_DEADLINE_MS } from "@/lib/simulation/constants";
 import {
