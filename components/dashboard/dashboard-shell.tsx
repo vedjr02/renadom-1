@@ -21,7 +21,7 @@ import { ZoneFilterTabs } from "@/components/dashboard/zone-filter-tabs";
 import { ZoneHeatmapStrip } from "@/components/dashboard/zone-heatmap-strip";
 import { applyOrderFilters } from "@/lib/dashboard/apply-order-filters";
 import { filterOrdersByZone } from "@/lib/dashboard/filter-orders";
-import { countBreachedOrders, getTotalRevenue } from "@/lib/simulation/selectors";
+import { countBreachedOrders, getFulfillmentMix, getTotalRevenue } from "@/lib/simulation/selectors";
 import { useLiveClock } from "@/hooks/useLiveClock";
 import { useShiftClock } from "@/hooks/useShiftClock";
 import { useSortedOrders, type OrderSortKey } from "@/hooks/useSortedOrders";
@@ -69,6 +69,7 @@ export function DashboardShell() {
 
   const filteredOrders = applyOrderFilters({ orders: activeOrders, zone: filter, priority, category, query });
   const sortedOrders = useSortedOrders(filteredOrders, sortKey, now);
+  const fulfillmentMix = getFulfillmentMix(activeOrders);
   const latestHour = hourlyTrend[hourlyTrend.length - 1];
 
   if (!isReady || !kpis) {
@@ -139,7 +140,9 @@ export function DashboardShell() {
             <OrdersSlaChart data={hourlyTrend} />
             <RevenueDonutChart data={revenueBreakdown} />
             <div className="grid gap-6">
+              <SlaHealthGauge complianceRate={kpis.slaComplianceRate} />
               <PerformanceScoreRing score={kpis.slaComplianceRate} label="Ops Score" />
+              <FulfillmentInsights picking={fulfillmentMix.picking} packing={fulfillmentMix.packing} dispatch={fulfillmentMix.dispatch} />
               <PickerLeaderboard orders={activeOrders} />
             </div>
           </motion.div>
