@@ -13,3 +13,6 @@ export const countExpressOrders = (orders: ActiveOrder[]): number =>
 
 export const countVipOrders = (orders: ActiveOrder[]): number =>
   orders.filter((order) => order.priority === "VIP").length;
+
+export const getTotalRevenue = (slices: { value: number }[]): number =>
+  slices.reduce((sum, slice) => sum + slice.value, 0);
