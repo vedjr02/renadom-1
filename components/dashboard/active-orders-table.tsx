@@ -14,6 +14,7 @@ import {
   formatSlaCountdown,
   getSlaProgress,
 } from "@/hooks/useStoreSimulation";
+import { FilterEmptyState } from "@/components/dashboard/filter-empty-state";
 import { OrderStatusBadge } from "@/components/dashboard/order-status-badge";
 import { OrderAgeCell } from "@/components/dashboard/order-age-cell";
 import { PanelHeader } from "@/components/dashboard/panel-header";
@@ -140,6 +141,9 @@ export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp, compact =
       />
 
       <div className="overflow-x-auto rounded-2xl border border-white/[0.06] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {orders.length === 0 ? (
+        <FilterEmptyState />
+      ) : (
         <Table className="min-w-[920px]">
           <TableHeader>
             <TableRow className="border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.02]">
@@ -161,6 +165,7 @@ export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp, compact =
             </AnimatePresence>
           </TableBody>
         </Table>
+      )}
       </div>
     </section>
   );
