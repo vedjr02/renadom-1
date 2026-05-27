@@ -140,16 +140,18 @@ export const getSlaProgress = (order: ActiveOrder, now: number): number => {
 
 export const useStoreSimulation = () => {
   const [state, setState] = useState<StoreSimulationState | null>(null);
+  const { paused, toggle, pause, resume } = useSimulationPause();
 
   useEffect(() => {
     setState(buildInitialState());
 
     const interval = setInterval(() => {
+      if (paused) return;
       setState((prev) => (prev ? tickSimulation(prev) : buildInitialState()));
     }, SIMULATION_TICK_MS);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [paused]);
 
   return {
     isReady: state !== null,
@@ -160,5 +162,9 @@ export const useStoreSimulation = () => {
     zoneLoads: state?.zoneLoads ?? [],
     lastUpdated: state?.lastUpdated ?? 0,
     slaDeadlineMs: SLA_DEADLINE_MS,
+    paused,
+    toggleSimulation: toggle,
+    pauseSimulation: pause,
+    resumeSimulation: resume,
   };
 };
