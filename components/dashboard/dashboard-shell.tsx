@@ -148,9 +148,15 @@ export function DashboardShell() {
           </motion.div>
 
           <motion.div custom={6} variants={sectionVariants} initial="hidden" animate="visible">
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <OrderSearchInput value={query} onChange={setQuery} onClear={clear} />
               <OrderSortControls value={sortKey} onChange={setSortKey} />
             </div>
+            {hasQuery ? (
+              <p className="mb-3 text-xs text-white/40">
+                Showing {sortedOrders.length} result{sortedOrders.length === 1 ? "" : "s"} for current filters
+              </p>
+            ) : null}
             <ActiveOrdersTable orders={sortedOrders} lastUpdated={lastUpdated} now={now} compact={compact} />
           </motion.div>
 
