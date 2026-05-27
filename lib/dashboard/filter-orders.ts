@@ -6,3 +6,14 @@ export const filterOrdersByZone = (
   filter: ZoneFilter,
 ): ActiveOrder[] =>
   filter === "All" ? orders : orders.filter((order) => order.zone === filter);
+
+export const filterOrdersByQuery = (orders: ActiveOrder[], query: string): ActiveOrder[] => {
+  const q = query.trim().toLowerCase();
+  if (!q) return orders;
+  return orders.filter(
+    (order) =>
+      order.id.toLowerCase().includes(q) ||
+      order.picker.toLowerCase().includes(q) ||
+      order.category.toLowerCase().includes(q),
+  );
+};
