@@ -7,3 +7,5 @@ export const formatDuration = (seconds: number): string => `${Math.round(seconds
 
 export const formatCount = (value: number): string =>
   Math.round(value).toLocaleString("en-US");
+
+export const formatOrderAge = (minutes: number): string => `${Math.round(minutes)}m`;
