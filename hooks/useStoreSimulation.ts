@@ -2,7 +2,7 @@
 
 import { useSimulationPause } from "@/hooks/useSimulationPause";
 import { useEffect, useState } from "react";
-import { SIMULATION_TICK_MS, SLA_DEADLINE_MS } from "@/lib/simulation/constants";
+import { MAX_ACTIVE_ORDERS, SIMULATION_TICK_MS, SLA_DEADLINE_MS } from "@/lib/simulation/constants";
 import {
   deriveZoneLoads,
   generateHourlyTrend,
@@ -41,8 +41,8 @@ const tickSimulation = (prev: StoreSimulationState): StoreSimulationState => {
     orders = [...orders, spawnActiveOrder()];
   }
 
-  if (orders.length > 22) {
-    orders = orders.slice(orders.length - 22);
+  if (orders.length > MAX_ACTIVE_ORDERS) {
+    orders = orders.slice(orders.length - MAX_ACTIVE_ORDERS);
   }
 
   const hourlyTrend = [...prev.hourlyTrend.slice(1)];
