@@ -9,7 +9,7 @@ export const countActiveByZone = (
 ): number => orders.filter((order) => order.zone === zone).length;
 
 export const countExpressOrders = (orders: ActiveOrder[]): number =>
-  orders.filter((order) => order.priority !== "Standard").length;
+  orders.filter((order) => order.priority === "Express").length;
 
 export const countVipOrders = (orders: ActiveOrder[]): number =>
   orders.filter((order) => order.priority === "VIP").length;
@@ -25,5 +25,3 @@ export const getAverageUtilization = (zones: { utilization: number }[]): number 
 export const countStandardOrders = (orders: ActiveOrder[]): number =>
   orders.filter((order) => order.priority === "Standard").length;
 
-export const countExpressOrders = (orders: ActiveOrder[]): number =>
-  orders.filter((order) => order.priority === "Express").length;
