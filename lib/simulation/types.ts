@@ -4,12 +4,15 @@ export type OrderCategory = "Groceries" | "Electronics" | "FMCG";
 
 export type OrderPriority = "Standard" | "Express" | "VIP";
 
+export type OrderStatus = "Picking" | "Packing" | "Dispatch";
+
 export interface ActiveOrder {
   id: string;
   zone: WarehouseZone;
   picker: string;
   category: OrderCategory;
   priority: OrderPriority;
+  status: OrderStatus;
   startedAt: number;
   slaDeadlineMs: number;
   breached: boolean;
