@@ -11,6 +11,14 @@ import { OrdersSlaChart } from "@/components/dashboard/orders-sla-chart";
 import { RevenueDonutChart } from "@/components/dashboard/revenue-donut-chart";
 import { ZoneHeatmapStrip } from "@/components/dashboard/zone-heatmap-strip";
 import { countBreachedOrders } from "@/lib/simulation/selectors";
+import { ShiftSummaryBar } from "@/components/dashboard/shift-summary-bar";
+import { SimulationControls } from "@/components/dashboard/simulation-controls";
+import { DashboardToolbar } from "@/components/dashboard/dashboard-toolbar";
+import { ZoneFilterTabs } from "@/components/dashboard/zone-filter-tabs";
+import { OrderSortControls } from "@/components/dashboard/order-sort-controls";
+import { PickerLeaderboard } from "@/components/dashboard/picker-leaderboard";
+import { PerformanceScoreRing } from "@/components/dashboard/performance-score-ring";
+import { ThroughputTicker } from "@/components/dashboard/throughput-ticker";
 import { useStoreSimulation } from "@/hooks/useStoreSimulation";
 
 const sectionVariants = {
