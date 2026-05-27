@@ -26,6 +26,7 @@ import { useLiveClock } from "@/hooks/useLiveClock";
 import { useShiftClock } from "@/hooks/useShiftClock";
 import { useSortedOrders, type OrderSortKey } from "@/hooks/useSortedOrders";
 import { useStoreSimulation } from "@/hooks/useStoreSimulation";
+import { useCompactMode } from "@/hooks/useCompactMode";
 import { useCategoryFilter } from "@/hooks/useCategoryFilter";
 import { usePriorityFilter } from "@/hooks/usePriorityFilter";
 import { useOrderSearch } from "@/hooks/useOrderSearch";
@@ -60,7 +61,8 @@ export function DashboardShell() {
   const { filter, setFilter } = useZoneFilter();
   const { priority, setPriority } = usePriorityFilter();
   const { category, setCategory } = useCategoryFilter();
-  const { query, setQuery, clear } = useOrderSearch();
+  const { query, setQuery, clear, hasQuery } = useOrderSearch();
+  const { compact, toggle: toggleCompact } = useCompactMode();
   const [sortKey, setSortKey] = useState<OrderSortKey>("sla");
   const elapsedMinutes = useShiftClock();
   const now = useLiveClock(1000);
@@ -101,6 +103,8 @@ export function DashboardShell() {
           <DashboardToolbar>
             <div className="flex flex-wrap items-center gap-3">
               <SimulationControls paused={paused} onToggle={toggleSimulation} />
+              <CompactModeToggle compact={compact} onToggle={toggleCompact} />
+              <ExportCsvButton disabled={sortedOrders.length === 0} />
               {latestHour ? (
                 <ThroughputTicker
                   ordersProcessed={latestHour.ordersProcessed}
@@ -140,7 +144,7 @@ export function DashboardShell() {
             <div className="mb-4">
               <OrderSortControls value={sortKey} onChange={setSortKey} />
             </div>
-            <ActiveOrdersTable orders={sortedOrders} lastUpdated={lastUpdated} now={now} />
+            <ActiveOrdersTable orders={sortedOrders} lastUpdated={lastUpdated} now={now} compact={compact} />
           </motion.div>
 
           <DashboardFooter lastUpdated={lastUpdated} />
