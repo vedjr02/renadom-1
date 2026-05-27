@@ -14,6 +14,7 @@ import {
   formatSlaCountdown,
   getSlaProgress,
 } from "@/hooks/useStoreSimulation";
+import { OrderAgeCell } from "@/components/dashboard/order-age-cell";
 import { PanelHeader } from "@/components/dashboard/panel-header";
 import { categoryColors } from "@/lib/dashboard/category-colors";
 import { pickerInitials } from "@/lib/dashboard/picker-initials";
