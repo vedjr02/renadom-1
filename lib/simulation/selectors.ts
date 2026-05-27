@@ -25,3 +25,6 @@ export const getAverageUtilization = (zones: { utilization: number }[]): number 
 export const countStandardOrders = (orders: ActiveOrder[]): number =>
   orders.filter((order) => order.priority === "Standard").length;
 
+
+export const countByStatus = (orders: ActiveOrder[], status: ActiveOrder["status"]): number =>
+  orders.filter((order) => order.status === status).length;
