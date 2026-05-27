@@ -32,3 +32,5 @@ export const SIMULATION_TICK_MS = 2000;
 export const SHIFT_START_HOUR = 6;
 
 export const MAX_ACTIVE_ORDERS = 22;
+
+export const TICKS_PER_MINUTE = 30;
