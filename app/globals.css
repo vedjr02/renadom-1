@@ -214,7 +214,7 @@
     @apply backdrop-blur-2xl;
   }
   .font-display {
-    @apply font-[family-name:var(--font-syne)];
+    @apply font-[family-name:var(--font-display)];
   }
   .font-body {
     @apply font-[family-name:var(--font-dm-sans)];
