@@ -14,3 +14,5 @@ export const opsInput =
   "rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-orange-500/50 focus:outline-none";
 export const opsTableHead = "text-[10px] uppercase tracking-wider text-zinc-500";
 export const opsDivider = "h-px bg-zinc-800";
+
+export const opsBadge = "rounded-md border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-[10px] uppercase tracking-wider text-zinc-400";
