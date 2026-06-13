@@ -9,7 +9,9 @@ interface OrderStatusBadgeProps {
 
 export function OrderStatusBadge({ status }: OrderStatusBadgeProps) {
   return (
-    <span className={`rounded-full border px-2.5 py-1 text-xs ${statusColors[status]}`}>
+    <span
+      className={`rounded-md border px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide ${statusColors[status]}`}
+    >
       {status}
     </span>
   );
