@@ -1,29 +1,29 @@
 import type { Metadata } from "next";
-import { DM_Sans, Geist_Mono, Syne } from "next/font/google";
+import { IBM_Plex_Sans, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { AmbientBackground } from "@/components/dashboard/ambient-background";
-import { CursorGlow } from "@/components/dashboard/cursor-glow";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const display = Space_Grotesk({
+  variable: "--font-display",
   subsets: ["latin"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const body = IBM_Plex_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Q-Commerce Dark Store Analytics",
+  title: "Forge Ops · Q-Commerce Command Center",
   description:
-    "Live profitability and SLA analytics engine for dark store operations.",
-  keywords: ["Q-Commerce", "SLA", "Dark Store", "Analytics"],
+    "Industrial SLA and profitability command center for Q-Commerce dark store operations.",
+  keywords: ["Q-Commerce", "SLA", "Dark Store", "Analytics", "Operations"],
 };
 
 export default function RootLayout({
@@ -34,11 +34,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${syne.variable} ${dmSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`dark ${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="relative min-h-full flex flex-col overflow-x-hidden bg-background font-[family-name:var(--font-dm-sans)]">
+      <body className="relative min-h-full flex bg-background font-[family-name:var(--font-body)] text-foreground">
         <AmbientBackground />
-        <CursorGlow />
         {children}
       </body>
     </html>
