@@ -12,7 +12,7 @@ export function OrderAgeCell({ startedAt, now }: OrderAgeCellProps) {
   const age = getOrderAgeMinutes(startedAt, now);
 
   return (
-    <span className={`font-mono text-xs tabular-nums ${age >= 8 ? "accent-amber" : "text-white/55"}`}>
+    <span className={`font-mono text-xs tabular-nums ${age >= 8 ? "text-amber-400" : "text-zinc-500"}`}>
       {formatOrderAge(age)}
     </span>
   );
