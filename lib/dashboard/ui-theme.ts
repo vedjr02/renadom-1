@@ -1,0 +1,16 @@
+/** Shared Tailwind class bundles for the Forge Ops UI revamp. */
+export const opsCard = "rounded-lg border border-zinc-800 bg-zinc-900/90 shadow-sm";
+export const opsCardHover = "transition-colors hover:border-zinc-700 hover:bg-zinc-900";
+export const opsPanel = "rounded-lg border border-zinc-800 bg-zinc-950/80";
+export const opsLabel = "text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-500";
+export const opsHeading = "font-[family-name:var(--font-display)] tracking-tight text-zinc-50";
+export const opsMuted = "text-zinc-400";
+export const opsAccent = "text-orange-400";
+export const opsBtn =
+  "rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-[11px] font-medium uppercase tracking-wider text-zinc-300 transition hover:border-orange-500/50 hover:text-orange-300";
+export const opsBtnActive =
+  "rounded-md border border-orange-500/40 bg-orange-500/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-wider text-orange-300";
+export const opsInput =
+  "rounded-md border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-orange-500/50 focus:outline-none";
+export const opsTableHead = "text-[10px] uppercase tracking-wider text-zinc-500";
+export const opsDivider = "h-px bg-zinc-800";
