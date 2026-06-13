@@ -9,16 +9,18 @@ export function PerformanceScoreRing({ score, label }: PerformanceScoreRingProps
   const clamped = Math.max(0, Math.min(100, score));
 
   return (
-    <div className="shadow-panel flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-2">
       <div
-        className="shadow-panel grid h-20 w-20 place-items-center rounded-full border border-cyan-400/20 bg-cyan-400/5"
-        style={{ background: `conic-gradient(rgba(34,211,238,0.8) ${clamped}%, rgba(255,255,255,0.06) 0)` }}
+        className="grid h-20 w-20 place-items-center rounded-full border border-orange-500/30 bg-orange-500/5"
+        style={{
+          background: `conic-gradient(rgba(249,115,22,0.85) ${clamped}%, rgba(39,39,42,0.8) 0)`,
+        }}
       >
-        <div className="shadow-panel grid h-14 w-14 place-items-center rounded-full bg-[#0a0c12] text-sm font-semibold text-white">
+        <div className="grid h-14 w-14 place-items-center rounded-full bg-zinc-950 text-sm font-semibold text-zinc-100">
           {Math.round(clamped)}
         </div>
       </div>
-      <p className="shadow-panel metric-label">{label}</p>
+      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-500">{label}</p>
     </div>
   );
 }
