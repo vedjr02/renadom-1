@@ -1,6 +1,7 @@
 "use client";
 
 import type { CategoryFilter } from "@/hooks/useCategoryFilter";
+import { opsBtn, opsBtnActive } from "@/lib/dashboard/ui-theme";
 
 interface CategoryFilterChipsProps {
   value: CategoryFilter;
@@ -17,11 +18,7 @@ export function CategoryFilterChips({ value, onChange }: CategoryFilterChipsProp
           key={chip}
           type="button"
           onClick={() => onChange(chip)}
-          className={`rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] transition ${
-            value === chip
-              ? "border-amber-400/30 bg-amber-400/10 text-amber-200"
-              : "border-white/10 bg-white/[0.03] text-white/45 hover:text-white/70"
-          }`}
+          className={value === chip ? opsBtnActive : opsBtn}
         >
           {chip}
         </button>
