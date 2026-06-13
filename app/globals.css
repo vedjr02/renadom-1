@@ -172,7 +172,7 @@
   }
 
   .text-gradient {
-    @apply bg-[linear-gradient(120deg,#ffffff_0%,#67e8f9_45%,#c4b5fd_100%)] bg-clip-text text-transparent;
+    @apply text-orange-400;
   }
 
   .glow-ring {
