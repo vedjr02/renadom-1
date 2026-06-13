@@ -9,10 +9,10 @@ interface RevenueDeltaBadgeProps {
 export function RevenueDeltaBadge({ delta }: RevenueDeltaBadgeProps) {
   return (
     <span
-      className={`rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] ${
+      className={`rounded-md border px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] ${
         delta >= 0
-          ? "border-emerald-400/20 bg-emerald-400/10 text-emerald-200"
-          : "border-red-400/20 bg-red-400/10 text-red-200"
+          ? "border-lime-500/30 bg-lime-500/10 text-lime-300"
+          : "border-red-500/30 bg-red-500/10 text-red-300"
       }`}
     >
       {formatDelta(delta, "%")} shift
