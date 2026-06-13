@@ -1,6 +1,7 @@
 "use client";
 
 import type { ActiveOrder } from "@/lib/simulation/types";
+import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface PickerLeaderboardProps {
   orders: ActiveOrder[];
@@ -17,13 +18,15 @@ export function PickerLeaderboard({ orders }: PickerLeaderboardProps) {
     .slice(0, 3);
 
   return (
-    <div className="hover-lift glass-panel p-4">
-      <p className="hover-lift metric-label">Top Pickers</p>
-      <ul className="hover-lift mt-3 space-y-2">
+    <div className="ops-card p-4">
+      <p className={opsLabel}>Top Pickers</p>
+      <ul className="mt-3 space-y-2">
         {top.map(([picker, count], index) => (
-          <li key={picker} className="hover-lift flex items-center justify-between text-sm text-white/75">
-            <span>{index + 1}. {picker}</span>
-            <span className="hover-lift font-mono text-xs accent-cyan">{count} orders</span>
+          <li key={picker} className="flex items-center justify-between text-sm text-zinc-300">
+            <span>
+              {index + 1}. {picker}
+            </span>
+            <span className="font-mono text-xs text-orange-400">{count} orders</span>
           </li>
         ))}
       </ul>
