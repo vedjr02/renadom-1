@@ -1,6 +1,7 @@
 "use client";
 
 import type { OrderSortKey } from "@/hooks/useSortedOrders";
+import { opsBtn, opsBtnActive } from "@/lib/dashboard/ui-theme";
 
 interface OrderSortControlsProps {
   value: OrderSortKey;
@@ -15,17 +16,13 @@ const options: { key: OrderSortKey; label: string }[] = [
 
 export function OrderSortControls({ value, onChange }: OrderSortControlsProps) {
   return (
-    <div className="font-body flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2">
       {options.map((option) => (
         <button
           key={option.key}
           type="button"
           onClick={() => onChange(option.key)}
-          className={`rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] transition ${
-            value === option.key
-              ? "border-violet-400/30 bg-violet-400/10 text-violet-200"
-              : "border-white/10 bg-white/[0.03] text-white/45 hover:text-white/70"
-          }`}
+          className={value === option.key ? opsBtnActive : opsBtn}
         >
           {option.label}
         </button>
