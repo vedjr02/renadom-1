@@ -7,10 +7,10 @@ interface ThroughputTickerProps {
 
 export function ThroughputTicker({ ordersProcessed, breaches }: ThroughputTickerProps) {
   return (
-    <div className="border-subtle flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-xs text-white/55">
-      <span className="border-subtle accent-cyan font-mono tabular-nums">{ordersProcessed} orders/hr</span>
-      <span className="border-subtle text-white/25">·</span>
-      <span className="border-subtle accent-amber font-mono tabular-nums">{breaches} breaches</span>
+    <div className="flex items-center gap-3 rounded-md border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-xs text-zinc-400">
+      <span className="font-mono tabular-nums text-orange-400">{ordersProcessed} orders/hr</span>
+      <span className="text-zinc-700">·</span>
+      <span className="font-mono tabular-nums text-amber-400">{breaches} breaches</span>
     </div>
   );
 }
