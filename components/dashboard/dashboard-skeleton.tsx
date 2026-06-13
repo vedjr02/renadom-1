@@ -10,14 +10,14 @@ const pulse = {
 export function DashboardSkeleton() {
   return (
     <main className="mx-auto w-full max-w-[1480px] flex-1 px-6 py-10 sm:px-10 lg:px-14">
-      <motion.div {...pulse} className="shimmer-surface mb-10 h-28 rounded-3xl bg-white/[0.04]" />
+      <motion.div {...pulse} className="mb-10 h-28 rounded-lg bg-zinc-900" />
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {Array.from({ length: 4 }).map((_, index) => (
           <motion.div
             key={index}
             {...pulse}
             transition={{ ...pulse.transition, delay: index * 0.08 }}
-            className="shimmer-surface h-44 rounded-2xl bg-white/[0.04]"
+            className="h-44 rounded-lg bg-zinc-900"
           />
         ))}
       </div>
@@ -27,15 +27,15 @@ export function DashboardSkeleton() {
             key={`zone-${index}`}
             {...pulse}
             transition={{ ...pulse.transition, delay: index * 0.06 }}
-            className="shimmer-surface h-36 rounded-2xl bg-white/[0.04]"
+            className="h-36 rounded-lg bg-zinc-900"
           />
         ))}
       </div>
       <div className="mt-6 grid gap-6 xl:grid-cols-[1.65fr_1fr]">
-        <motion.div {...pulse} className="shimmer-surface h-96 rounded-2xl bg-white/[0.04]" />
-        <motion.div {...pulse} className="shimmer-surface h-96 rounded-2xl bg-white/[0.04]" />
+        <motion.div {...pulse} className="h-96 rounded-lg bg-zinc-900" />
+        <motion.div {...pulse} className="h-96 rounded-lg bg-zinc-900" />
       </div>
-      <motion.div {...pulse} className="shimmer-surface mt-6 h-80 rounded-2xl bg-white/[0.04]" />
+      <motion.div {...pulse} className="mt-6 h-80 rounded-lg bg-zinc-900" />
     </main>
   );
 }
