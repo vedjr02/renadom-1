@@ -1,6 +1,7 @@
 "use client";
 
 import type { PriorityFilter } from "@/hooks/usePriorityFilter";
+import { opsBtn, opsBtnActive } from "@/lib/dashboard/ui-theme";
 
 interface PriorityFilterTabsProps {
   value: PriorityFilter;
@@ -17,11 +18,7 @@ export function PriorityFilterTabs({ value, onChange }: PriorityFilterTabsProps)
           key={tab}
           type="button"
           onClick={() => onChange(tab)}
-          className={`rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] transition ${
-            value === tab
-              ? "border-fuchsia-400/30 bg-fuchsia-400/10 text-fuchsia-200"
-              : "border-white/10 bg-white/[0.03] text-white/45 hover:text-white/70"
-          }`}
+          className={value === tab ? opsBtnActive : opsBtn}
         >
           {tab}
         </button>
