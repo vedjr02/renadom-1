@@ -168,7 +168,7 @@
   }
 
   .dashboard-grid {
-    @apply grid gap-6;
+    @apply grid gap-5;
   }
 
   .text-gradient {
