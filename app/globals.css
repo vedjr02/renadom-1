@@ -217,7 +217,7 @@
     @apply font-[family-name:var(--font-display)];
   }
   .font-body {
-    @apply font-[family-name:var(--font-dm-sans)];
+    @apply font-[family-name:var(--font-body)];
   }
   .ring-subtle {
     @apply ring-1 ring-white/10;
