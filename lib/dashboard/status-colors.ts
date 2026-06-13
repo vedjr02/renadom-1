@@ -1,7 +1,7 @@
 import type { OrderStatus } from "@/lib/simulation/types";
 
 export const statusColors: Record<OrderStatus, string> = {
-  Picking: "text-cyan-200 border-cyan-400/25 bg-cyan-400/10",
-  Packing: "text-violet-200 border-violet-400/25 bg-violet-400/10",
-  Dispatch: "text-emerald-200 border-emerald-400/25 bg-emerald-400/10",
+  Picking: "text-orange-300 border-orange-500/30 bg-orange-500/10",
+  Packing: "text-amber-300 border-amber-500/30 bg-amber-500/10",
+  Dispatch: "text-lime-300 border-lime-500/30 bg-lime-500/10",
 };
