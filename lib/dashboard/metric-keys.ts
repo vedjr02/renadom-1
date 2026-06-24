@@ -6,3 +6,4 @@ export const METRIC_ACTIVE_ORDERS = "active_orders";
 export const METRIC_BREACHES = "sla_breaches";
 export const METRIC_THROUGHPUT = "orders_processed";
 export const METRIC_REVENUE = "shift_revenue";
+export const METRIC_UTILIZATION = "zone_utilization";
