@@ -29,3 +29,7 @@ export const expressRatio = (orders: ActiveOrder[]): number => {
   if (!orders.length) return 0;
   return orders.filter(isExpressOrder).length / orders.length;
 };
+export const breachRatio = (orders: ActiveOrder[]): number => {
+  if (!orders.length) return 0;
+  return orders.filter(isBreached).length / orders.length;
+};
