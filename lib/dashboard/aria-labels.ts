@@ -17,3 +17,4 @@ export const ARIA_SIDEBAR_REPORTS = "Navigate to reports view";
 export const ARIA_BREACH_BANNER = "Active SLA breach alert";
 export const ARIA_KPI_SECTION = "Key performance indicators";
 export const ARIA_ORDERS_TABLE = "Active orders operational table";
+export const ARIA_SLA_CHART = "Orders versus SLA breaches chart";
