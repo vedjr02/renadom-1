@@ -21,3 +21,4 @@ export const CHART_AXIS = "rgba(113, 113, 122, 0.9)";
 export const CHART_CROSSHAIR = "rgba(249, 115, 22, 0.15)";
 export const CHART_DONUT_STROKE = "rgba(39, 39, 42, 1)";
 export const CHART_AREA_STROKE = "rgba(249, 115, 22, 0.85)";
+export const CHART_BREACH_STROKE = "rgba(248, 113, 113, 0.95)";
