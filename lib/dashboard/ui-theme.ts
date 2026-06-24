@@ -21,3 +21,4 @@ export const opsStripeLime = "border-l-4 border-l-lime-500";
 export const opsStripeAmber = "border-l-4 border-l-amber-500";
 export const opsTableRow = "border-zinc-800 hover:bg-zinc-900/60 transition-colors";
 export const opsSectionTitle = "font-display text-lg font-semibold text-zinc-50";
+export const opsMono = "font-mono text-xs tabular-nums";
