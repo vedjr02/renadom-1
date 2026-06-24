@@ -7,3 +7,4 @@ export const isPacking = (o: ActiveOrder): boolean => o.status === 'Packing';
 export const isDispatch = (o: ActiveOrder): boolean => o.status === 'Dispatch';
 export const priorityWeight = (p: OrderPriority): number =>
   p === 'VIP' ? 3 : p === 'Express' ? 2 : 1;
+export const orderAgeMs = (o: ActiveOrder, now: number): number => Math.max(0, now - o.startedAt);
