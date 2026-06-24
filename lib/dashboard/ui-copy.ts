@@ -12,3 +12,4 @@ export const ZONE_LABEL = "Warehouse zone";
 export const PICKER_LABEL = "Assigned picker";
 export const SLA_LABEL = "SLA countdown";
 export const COMPLIANCE_LABEL = "Compliance rate";
+export const THROUGHPUT_LABEL = "Hourly throughput";
