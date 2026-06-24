@@ -6,3 +6,4 @@ export const ARIA_SEARCH_ORDERS = "Search active orders";
 export const ARIA_CLEAR_SEARCH = "Clear order search query";
 export const ARIA_ZONE_FILTER = "Filter orders by warehouse zone";
 export const ARIA_PRIORITY_FILTER = "Filter orders by priority tier";
+export const ARIA_CATEGORY_FILTER = "Filter orders by product category";
