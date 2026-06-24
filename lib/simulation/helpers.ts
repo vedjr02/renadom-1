@@ -21,3 +21,7 @@ export const getUniquePickers = (orders: ActiveOrder[]): string[] =>
   [...new Set(orders.map(o => o.picker))];
 export const sortByPriority = (a: ActiveOrder, b: ActiveOrder): number =>
   priorityWeight(b.priority) - priorityWeight(a.priority);
+export const averageOrderAgeMin = (orders: ActiveOrder[], now: number): number => {
+  if (!orders.length) return 0;
+  return orders.reduce((s, o) => s + orderAgeMs(o, now), 0) / orders.length / 60000;
+};
