@@ -18,3 +18,5 @@ export const formatShiftElapsed = (minutes: number): string => {
 
 export const formatDelta = (value: number, suffix = ""): string =>
   `${value >= 0 ? "+" : ""}${value.toFixed(1)}${suffix}`;
+export const formatCompactNumber = (n: number): string =>
+  n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(Math.round(n));
