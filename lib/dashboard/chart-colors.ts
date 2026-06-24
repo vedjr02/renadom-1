@@ -8,3 +8,4 @@ export const CHART_TOOLTIP_BORDER = "rgba(63, 63, 70, 0.8)";
 
 export const CHART_LIME = "rgba(132, 204, 22, 0.9)";
 export const CHART_AMBER = "rgba(245, 158, 11, 0.9)";
+export const CHART_ZINC = "rgba(161, 161, 170, 0.9)";
