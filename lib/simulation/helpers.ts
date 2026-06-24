@@ -19,3 +19,5 @@ export const countByPriority = (orders: ActiveOrder[], p: OrderPriority): number
 export const hasActiveBreaches = (orders: ActiveOrder[]): boolean => orders.some(o => o.breached);
 export const getUniquePickers = (orders: ActiveOrder[]): string[] =>
   [...new Set(orders.map(o => o.picker))];
+export const sortByPriority = (a: ActiveOrder, b: ActiveOrder): number =>
+  priorityWeight(b.priority) - priorityWeight(a.priority);
