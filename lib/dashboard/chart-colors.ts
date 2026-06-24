@@ -16,3 +16,4 @@ export const CHART_ORANGE_MUTED = "rgba(249, 115, 22, 0.45)";
 export const CHART_RED_MUTED = "rgba(239, 68, 68, 0.35)";
 export const CHART_LIME_FILL = "rgba(132, 204, 22, 0.2)";
 export const CHART_AMBER_FILL = "rgba(245, 158, 11, 0.2)";
+export const CHART_LEGEND = "rgba(212, 212, 216, 0.85)";
