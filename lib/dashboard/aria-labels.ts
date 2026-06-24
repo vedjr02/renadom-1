@@ -14,3 +14,4 @@ export const ARIA_SIDEBAR_OVERVIEW = "Navigate to overview dashboard";
 export const ARIA_SIDEBAR_ORDERS = "Navigate to orders view";
 export const ARIA_SIDEBAR_ZONES = "Navigate to zones view";
 export const ARIA_SIDEBAR_REPORTS = "Navigate to reports view";
+export const ARIA_BREACH_BANNER = "Active SLA breach alert";
