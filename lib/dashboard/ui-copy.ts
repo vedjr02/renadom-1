@@ -4,3 +4,4 @@ export const PAUSE_LABEL = "Stream paused — metrics frozen";
 export const RESUME_LABEL = "Stream live — metrics updating";
 export const SIDEBAR_TAGLINE = "Real-time dark store intelligence";
 export const TABLE_EMPTY_TITLE = "No active orders in view";
+export const BREACH_WARNING_PREFIX = "SLA breach detected on";
