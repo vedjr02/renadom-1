@@ -32,3 +32,4 @@ export const formatHoursMinutes = (totalMin: number): string => {
   return `${h}h ${m}m`;
 };
 export const formatUtilization = (pct: number): string => `${Math.round(pct)}% util`;
+export const formatOrderCount = (n: number): string => `${Math.round(n)} order${n === 1 ? '' : 's'}`;
