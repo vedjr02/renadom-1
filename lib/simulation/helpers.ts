@@ -12,3 +12,5 @@ export const matchesPicker = (o: ActiveOrder, q: string): boolean =>
   o.picker.toLowerCase().includes(q.toLowerCase());
 export const matchesOrderId = (o: ActiveOrder, q: string): boolean =>
   o.id.toLowerCase().includes(q.toLowerCase());
+export const countByStatus = (orders: ActiveOrder[], status: ActiveOrder['status']): number =>
+  orders.filter(o => o.status === status).length;
