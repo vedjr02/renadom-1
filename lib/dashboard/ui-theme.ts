@@ -24,3 +24,4 @@ export const opsSectionTitle = "font-display text-lg font-semibold text-zinc-50"
 export const opsMono = "font-mono text-xs tabular-nums";
 export const opsDanger = "text-red-400";
 export const opsSuccess = "text-lime-400";
+export const opsWarn = "text-amber-400";
