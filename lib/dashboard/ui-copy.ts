@@ -7,3 +7,4 @@ export const TABLE_EMPTY_TITLE = "No active orders in view";
 export const BREACH_WARNING_PREFIX = "SLA breach detected on";
 export const EXPORT_SUCCESS_MOCK = "Export queued — demo mode";
 export const FILTER_RESET_HINT = "Clear filters to see all orders";
+export const SHIFT_LABEL = "Current shift";
