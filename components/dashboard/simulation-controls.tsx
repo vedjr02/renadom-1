@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_PAUSE_SIM } from "@/lib/dashboard/aria-labels";
 import { opsBtn } from "@/lib/dashboard/ui-theme";
 
 interface SimulationControlsProps {
