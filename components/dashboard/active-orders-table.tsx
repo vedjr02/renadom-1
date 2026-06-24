@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_ORDERS_TABLE } from "@/lib/dashboard/aria-labels";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Table,
@@ -100,7 +101,7 @@ export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp, compact =
   void lastUpdated;
 
   return (
-    <section className="ops-card glow-ring overflow-hidden p-6">
+    <section aria-label={ARIA_ORDERS_TABLE} className="ops-card glow-ring overflow-hidden p-6">
       <PanelHeader
         title="Operational Drill-down"
         subtitle="Active pick paths with live 10-minute SLA countdown"
