@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_KPI_SECTION } from "@/lib/dashboard/aria-labels";
 import { SparkAreaChart } from "@tremor/react";
 import { motion } from "framer-motion";
 import { Clock3, Package, Trash2, TrendingUp } from "lucide-react";
@@ -63,7 +64,7 @@ export function KpiScorecards({ kpis }: KpiScorecardsProps) {
   ];
 
   return (
-    <section className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+    <section aria-label={ARIA_KPI_SECTION} className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
       {cards.map((card, index) => {
         const Icon = card.icon;
         return (
