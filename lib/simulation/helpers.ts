@@ -5,3 +5,5 @@ export const isBreached = (o: ActiveOrder): boolean => o.breached;
 export const isPicking = (o: ActiveOrder): boolean => o.status === 'Picking';
 export const isPacking = (o: ActiveOrder): boolean => o.status === 'Packing';
 export const isDispatch = (o: ActiveOrder): boolean => o.status === 'Dispatch';
+export const priorityWeight = (p: OrderPriority): number =>
+  p === 'VIP' ? 3 : p === 'Express' ? 2 : 1;
