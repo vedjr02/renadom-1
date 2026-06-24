@@ -8,3 +8,5 @@ export const isDispatch = (o: ActiveOrder): boolean => o.status === 'Dispatch';
 export const priorityWeight = (p: OrderPriority): number =>
   p === 'VIP' ? 3 : p === 'Express' ? 2 : 1;
 export const orderAgeMs = (o: ActiveOrder, now: number): number => Math.max(0, now - o.startedAt);
+export const matchesPicker = (o: ActiveOrder, q: string): boolean =>
+  o.picker.toLowerCase().includes(q.toLowerCase());
