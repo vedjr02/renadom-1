@@ -9,3 +9,4 @@ export const METRIC_REVENUE = "shift_revenue";
 export const METRIC_UTILIZATION = "zone_utilization";
 export const METRIC_FULFILLMENT = "fulfillment_mix";
 export const METRIC_OPS_SCORE = "ops_score";
+export const METRIC_PICKING = "picking_count";
