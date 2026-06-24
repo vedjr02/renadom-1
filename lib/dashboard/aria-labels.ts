@@ -11,3 +11,4 @@ export const ARIA_SORT_SLA = "Sort orders by SLA urgency";
 export const ARIA_SORT_AGE = "Sort orders by age";
 export const ARIA_SORT_PRIORITY = "Sort orders by priority";
 export const ARIA_SIDEBAR_OVERVIEW = "Navigate to overview dashboard";
+export const ARIA_SIDEBAR_ORDERS = "Navigate to orders view";
