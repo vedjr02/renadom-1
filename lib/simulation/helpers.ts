@@ -16,3 +16,4 @@ export const countByStatus = (orders: ActiveOrder[], status: ActiveOrder['status
   orders.filter(o => o.status === status).length;
 export const countByPriority = (orders: ActiveOrder[], p: OrderPriority): number =>
   orders.filter(o => o.priority === p).length;
+export const hasActiveBreaches = (orders: ActiveOrder[]): boolean => orders.some(o => o.breached);
