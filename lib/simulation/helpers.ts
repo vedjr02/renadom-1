@@ -14,3 +14,5 @@ export const matchesOrderId = (o: ActiveOrder, q: string): boolean =>
   o.id.toLowerCase().includes(q.toLowerCase());
 export const countByStatus = (orders: ActiveOrder[], status: ActiveOrder['status']): number =>
   orders.filter(o => o.status === status).length;
+export const countByPriority = (orders: ActiveOrder[], p: OrderPriority): number =>
+  orders.filter(o => o.priority === p).length;
