@@ -26,3 +26,8 @@ export const formatRatio = (num: number, den: number): string =>
   den === 0 ? '0%' : `${Math.round((num / den) * 100)}%`;
 export const formatSigned = (n: number): string => `${n >= 0 ? '+' : ''}${n.toFixed(1)}`;
 export const formatInteger = (n: number): string => Math.round(n).toString();
+export const formatHoursMinutes = (totalMin: number): string => {
+  const h = Math.floor(totalMin / 60);
+  const m = Math.round(totalMin % 60);
+  return `${h}h ${m}m`;
+};
