@@ -25,3 +25,7 @@ export const averageOrderAgeMin = (orders: ActiveOrder[], now: number): number =
   if (!orders.length) return 0;
   return orders.reduce((s, o) => s + orderAgeMs(o, now), 0) / orders.length / 60000;
 };
+export const expressRatio = (orders: ActiveOrder[]): number => {
+  if (!orders.length) return 0;
+  return orders.filter(isExpressOrder).length / orders.length;
+};
