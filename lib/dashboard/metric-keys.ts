@@ -12,3 +12,4 @@ export const METRIC_OPS_SCORE = "ops_score";
 export const METRIC_PICKING = "picking_count";
 export const METRIC_PACKING = "packing_count";
 export const METRIC_DISPATCH = "dispatch_count";
+export const METRIC_EXPRESS = "express_orders";
