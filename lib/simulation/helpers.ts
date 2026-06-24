@@ -17,3 +17,5 @@ export const countByStatus = (orders: ActiveOrder[], status: ActiveOrder['status
 export const countByPriority = (orders: ActiveOrder[], p: OrderPriority): number =>
   orders.filter(o => o.priority === p).length;
 export const hasActiveBreaches = (orders: ActiveOrder[]): boolean => orders.some(o => o.breached);
+export const getUniquePickers = (orders: ActiveOrder[]): string[] =>
+  [...new Set(orders.map(o => o.picker))];
