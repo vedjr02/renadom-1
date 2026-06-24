@@ -8,3 +8,4 @@ export const METRIC_THROUGHPUT = "orders_processed";
 export const METRIC_REVENUE = "shift_revenue";
 export const METRIC_UTILIZATION = "zone_utilization";
 export const METRIC_FULFILLMENT = "fulfillment_mix";
+export const METRIC_OPS_SCORE = "ops_score";
