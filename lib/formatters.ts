@@ -21,3 +21,4 @@ export const formatDelta = (value: number, suffix = ""): string =>
 export const formatCompactNumber = (n: number): string =>
   n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(Math.round(n));
 export const formatSeconds = (s: number): string => `${Math.max(0, Math.round(s))}s`;
+export const formatMinutes = (m: number): string => `${Math.max(0, Math.round(m))}m`;
