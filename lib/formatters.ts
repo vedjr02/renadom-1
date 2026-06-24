@@ -34,3 +34,4 @@ export const formatHoursMinutes = (totalMin: number): string => {
 export const formatUtilization = (pct: number): string => `${Math.round(pct)}% util`;
 export const formatOrderCount = (n: number): string => `${Math.round(n)} order${n === 1 ? '' : 's'}`;
 export const formatBreachCount = (n: number): string => `${n} breach${n === 1 ? '' : 'es'}`;
+export const formatSparkLabel = (i: number): string => `t-${i}`;
