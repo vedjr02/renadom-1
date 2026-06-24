@@ -10,3 +10,4 @@ export const FILTER_RESET_HINT = "Clear filters to see all orders";
 export const SHIFT_LABEL = "Current shift";
 export const ZONE_LABEL = "Warehouse zone";
 export const PICKER_LABEL = "Assigned picker";
+export const SLA_LABEL = "SLA countdown";
