@@ -17,3 +17,4 @@ export const opsDivider = "h-px bg-zinc-800";
 
 export const opsBadge = "rounded-md border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-[10px] uppercase tracking-wider text-zinc-400";
 export const opsStripeOrange = "border-l-4 border-l-orange-500";
+export const opsStripeLime = "border-l-4 border-l-lime-500";
