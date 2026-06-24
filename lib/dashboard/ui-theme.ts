@@ -23,3 +23,4 @@ export const opsTableRow = "border-zinc-800 hover:bg-zinc-900/60 transition-colo
 export const opsSectionTitle = "font-display text-lg font-semibold text-zinc-50";
 export const opsMono = "font-mono text-xs tabular-nums";
 export const opsDanger = "text-red-400";
+export const opsSuccess = "text-lime-400";
