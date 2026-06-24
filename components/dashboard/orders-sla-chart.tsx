@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_SLA_CHART } from "@/lib/dashboard/aria-labels";
 import { motion } from "framer-motion";
 import {
   Area,
@@ -30,7 +31,7 @@ interface OrdersSlaChartProps {
 
 export function OrdersSlaChart({ data }: OrdersSlaChartProps) {
   return (
-    <motion.section whileHover={{ y: -2 }} transition={{ duration: 0.25 }} className="ops-card glow-ring flex h-full flex-col p-6">
+    <motion.section aria-label={ARIA_SLA_CHART} whileHover={{ y: -2 }} transition={{ duration: 0.25 }} className="ops-card glow-ring flex h-full flex-col p-6">
       <PanelHeader title="Orders vs. SLA Breaches" subtitle="Rolling 12-hour throughput overlay" badge="Live" />
       <div className="h-80 w-full">
         <ResponsiveContainer width="100%" height="100%">
