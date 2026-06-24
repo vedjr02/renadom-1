@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_REVENUE_CHART } from "@/lib/dashboard/aria-labels";
 import { DonutChart, Legend } from "@tremor/react";
 import { motion } from "framer-motion";
 import { RevenueDeltaBadge } from "@/components/dashboard/revenue-delta-badge";
