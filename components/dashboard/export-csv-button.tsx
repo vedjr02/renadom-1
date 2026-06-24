@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_EXPORT_CSV } from "@/lib/dashboard/aria-labels";
 import { opsBtn } from "@/lib/dashboard/ui-theme";
 
 interface ExportCsvButtonProps {
@@ -10,7 +11,7 @@ interface ExportCsvButtonProps {
 export function ExportCsvButton({ disabled = false, onClick }: ExportCsvButtonProps) {
   return (
     <button
-      aria-label="Export filtered orders as CSV"
+      aria-label={ARIA_EXPORT_CSV}
       type="button"
       disabled={disabled}
       onClick={onClick}
