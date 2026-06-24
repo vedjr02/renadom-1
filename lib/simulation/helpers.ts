@@ -10,3 +10,5 @@ export const priorityWeight = (p: OrderPriority): number =>
 export const orderAgeMs = (o: ActiveOrder, now: number): number => Math.max(0, now - o.startedAt);
 export const matchesPicker = (o: ActiveOrder, q: string): boolean =>
   o.picker.toLowerCase().includes(q.toLowerCase());
+export const matchesOrderId = (o: ActiveOrder, q: string): boolean =>
+  o.id.toLowerCase().includes(q.toLowerCase());
