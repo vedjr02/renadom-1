@@ -19,3 +19,4 @@ export const opsBadge = "rounded-md border border-zinc-700 bg-zinc-900 px-2 py-0
 export const opsStripeOrange = "border-l-4 border-l-orange-500";
 export const opsStripeLime = "border-l-4 border-l-lime-500";
 export const opsStripeAmber = "border-l-4 border-l-amber-500";
+export const opsTableRow = "border-zinc-800 hover:bg-zinc-900/60 transition-colors";
