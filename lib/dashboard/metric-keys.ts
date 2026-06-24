@@ -11,3 +11,4 @@ export const METRIC_FULFILLMENT = "fulfillment_mix";
 export const METRIC_OPS_SCORE = "ops_score";
 export const METRIC_PICKING = "picking_count";
 export const METRIC_PACKING = "packing_count";
+export const METRIC_DISPATCH = "dispatch_count";
