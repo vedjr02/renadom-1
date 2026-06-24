@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_COMPACT_TOGGLE } from "@/lib/dashboard/aria-labels";
 import { opsBtn } from "@/lib/dashboard/ui-theme";
 
 interface CompactModeToggleProps {
@@ -10,7 +11,7 @@ interface CompactModeToggleProps {
 export function CompactModeToggle({ compact, onToggle }: CompactModeToggleProps) {
   return (
     <button
-      aria-label="Toggle compact table density"
+      aria-label={ARIA_COMPACT_TOGGLE}
       type="button"
       onClick={onToggle}
       className={opsBtn}
