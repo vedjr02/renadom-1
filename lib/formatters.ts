@@ -24,3 +24,4 @@ export const formatSeconds = (s: number): string => `${Math.max(0, Math.round(s)
 export const formatMinutes = (m: number): string => `${Math.max(0, Math.round(m))}m`;
 export const formatRatio = (num: number, den: number): string =>
   den === 0 ? '0%' : `${Math.round((num / den) * 100)}%`;
+export const formatSigned = (n: number): string => `${n >= 0 ? '+' : ''}${n.toFixed(1)}`;
