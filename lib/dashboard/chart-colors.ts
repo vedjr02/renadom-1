@@ -18,3 +18,4 @@ export const CHART_LIME_FILL = "rgba(132, 204, 22, 0.2)";
 export const CHART_AMBER_FILL = "rgba(245, 158, 11, 0.2)";
 export const CHART_LEGEND = "rgba(212, 212, 216, 0.85)";
 export const CHART_AXIS = "rgba(113, 113, 122, 0.9)";
+export const CHART_CROSSHAIR = "rgba(249, 115, 22, 0.15)";
