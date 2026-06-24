@@ -13,3 +13,4 @@ export const ARIA_SORT_PRIORITY = "Sort orders by priority";
 export const ARIA_SIDEBAR_OVERVIEW = "Navigate to overview dashboard";
 export const ARIA_SIDEBAR_ORDERS = "Navigate to orders view";
 export const ARIA_SIDEBAR_ZONES = "Navigate to zones view";
+export const ARIA_SIDEBAR_REPORTS = "Navigate to reports view";
