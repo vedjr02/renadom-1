@@ -3,6 +3,7 @@
 import { formatShiftElapsed } from "@/lib/formatters";
 import { getAverageUtilization } from "@/lib/simulation/selectors";
 import type { ZoneLoadMetric } from "@/lib/simulation/types";
+import { SHIFT_LABEL, UTILIZATION_LABEL, COMPLIANCE_LABEL, REVENUE_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface ShiftSummaryBarProps {
@@ -23,7 +24,7 @@ export function ShiftSummaryBar({
   return (
     <section className="ops-panel flex flex-wrap items-center gap-4 px-5 py-4">
       <div>
-        <p className={opsLabel}>Shift Elapsed</p>
+        <p className={opsLabel}>{SHIFT_LABEL}</p>
         <p className="font-display mt-1 text-lg font-semibold text-zinc-100">{formatShiftElapsed(elapsedMinutes)}</p>
       </div>
       <div className="hidden h-10 w-px bg-zinc-800 sm:block" />
