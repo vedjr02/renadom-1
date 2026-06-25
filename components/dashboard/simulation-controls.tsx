@@ -1,6 +1,7 @@
 "use client";
 
 import { ARIA_PAUSE_SIM } from "@/lib/dashboard/aria-labels";
+import { PAUSE_LABEL, RESUME_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsBtn } from "@/lib/dashboard/ui-theme";
 
 interface SimulationControlsProps {
@@ -16,7 +17,7 @@ export function SimulationControls({ paused, onToggle }: SimulationControlsProps
       onClick={onToggle}
       className={opsBtn}
     >
-      {paused ? "Resume Stream" : "Pause Stream"}
+      {paused ? RESUME_LABEL : PAUSE_LABEL}
     </button>
   );
 }
