@@ -15,7 +15,7 @@ export function OrderSearchInput({ value, onChange, onClear }: OrderSearchInputP
       <input
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        placeholder="Search order, picker, category..."
+        placeholder={SEARCH_PLACEHOLDER}
         className={`${opsInput} w-56 text-xs`}
       />
       {value ? (
