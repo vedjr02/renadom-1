@@ -12,7 +12,7 @@ interface SimulationControlsProps {
 export function SimulationControls({ paused, onToggle }: SimulationControlsProps) {
   return (
     <button
-      aria-label="Pause or resume live simulation stream"
+      aria-label={ARIA_PAUSE_SIM}
       type="button"
       onClick={onToggle}
       className={opsBtn}
