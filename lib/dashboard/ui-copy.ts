@@ -20,3 +20,4 @@ export const COMPACT_ON_LABEL = "Compact density enabled";
 export const COMPACT_OFF_LABEL = "Comfort density enabled";
 export const OPS_SCORE_LABEL = "Operations score";
 export const FOOTER_BUILD_LABEL = "Forge Ops portfolio build";
+export const LOADING_LABEL = "Initializing live metrics…";
