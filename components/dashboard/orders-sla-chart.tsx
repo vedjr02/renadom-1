@@ -13,6 +13,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { SLA_CHART_NOTE } from "@/lib/dashboard/chart-notes";
 import { PanelHeader } from "@/components/dashboard/panel-header";
 import {
   CHART_GRID,
@@ -32,7 +33,7 @@ interface OrdersSlaChartProps {
 export function OrdersSlaChart({ data }: OrdersSlaChartProps) {
   return (
     <motion.section aria-label={ARIA_SLA_CHART} whileHover={{ y: -2 }} transition={{ duration: 0.25 }} className="ops-card glow-ring flex h-full flex-col p-6">
-      <PanelHeader title="Orders vs. SLA Breaches" subtitle="Rolling 12-hour throughput overlay" badge="Live" />
+      <PanelHeader title="Orders vs. SLA Breaches" subtitle={SLA_CHART_NOTE} badge="Live" />
       <div className="h-80 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart key={data[data.length - 1]?.hour} data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
