@@ -1,5 +1,7 @@
 "use client";
 
+import { LOADING_LABEL } from "@/lib/dashboard/ui-copy";
+
 import { motion } from "framer-motion";
 
 const pulse = {
@@ -9,7 +11,8 @@ const pulse = {
 
 export function DashboardSkeleton() {
   return (
-    <main className="mx-auto w-full max-w-[1480px] flex-1 px-6 py-10 sm:px-10 lg:px-14">
+    <main aria-busy="true" className="mx-auto w-full max-w-[1480px] flex-1 px-6 py-10 sm:px-10 lg:px-14">
+      <p className="mb-4 text-center text-xs uppercase tracking-wider text-zinc-600">{LOADING_LABEL}</p>
       <motion.div {...pulse} className="mb-10 h-28 rounded-lg bg-zinc-900" />
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {Array.from({ length: 4 }).map((_, index) => (
