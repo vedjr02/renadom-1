@@ -2,6 +2,7 @@
 
 import { Activity, BarChart3, Boxes, FileText } from "lucide-react";
 import { NAV_ITEMS } from "@/lib/dashboard/nav-items";
+import { SIDEBAR_TAGLINE } from "@/lib/dashboard/ui-copy";
 import { opsAccent, opsLabel } from "@/lib/dashboard/ui-theme";
 
 const icons = [Activity, Boxes, BarChart3, FileText] as const;
@@ -12,6 +13,7 @@ export function DashboardSidebar() {
       <div className="mb-10 px-2">
         <p className={`${opsLabel} ${opsAccent}`}>Forge Ops</p>
         <h2 className="font-display mt-2 text-lg font-bold text-zinc-50">Dark Store</h2>
+        <p className="mt-1 text-xs text-zinc-500">{SIDEBAR_TAGLINE}</p>
       </div>
       <nav className="flex flex-col gap-1">
         {NAV_ITEMS.map((item, i) => {
