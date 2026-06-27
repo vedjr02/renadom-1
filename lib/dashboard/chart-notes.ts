@@ -3,3 +3,4 @@ export const REVENUE_CHART_NOTE = "Category mix updates every simulation tick";
 export const ZONE_HEATMAP_NOTE = "Utilization by warehouse zone";
 export const FULFILLMENT_NOTE = "Orders by fulfillment stage";
 export const PICKER_BOARD_NOTE = "Top performers this shift";
+export const OPS_SCORE_NOTE = "Composite SLA compliance score";
