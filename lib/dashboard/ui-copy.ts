@@ -24,3 +24,4 @@ export const LOADING_LABEL = "Initializing live metrics…";
 export const BREACH_COUNT_LABEL = "Active breaches";
 export const AVG_UTIL_LABEL = "Avg utilization";
 export const FILTER_ACTIVE_LABEL = "Filters active";
+export const LIVE_ORDERS_LABEL = "Live orders";
