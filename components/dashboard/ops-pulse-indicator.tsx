@@ -1,5 +1,6 @@
-import { MOCK_STREAM_LABEL } from "@/lib/dashboard/ui-copy";
 "use client";
+
+import { MOCK_STREAM_LABEL } from "@/lib/dashboard/ui-copy";
 
 interface OpsPulseIndicatorProps {
   paused: boolean;
@@ -17,7 +18,7 @@ export function OpsPulseIndicator({ paused }: OpsPulseIndicatorProps) {
           paused ? "bg-amber-400" : "animate-pulse bg-lime-400"
         }`}
       />
-      {paused ? "Ops Pulse Paused" : "Ops Pulse Live"}
+      {paused ? "Ops Pulse Paused" : MOCK_STREAM_LABEL}
     </span>
   );
 }
