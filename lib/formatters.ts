@@ -38,3 +38,4 @@ export const formatSparkLabel = (i: number): string => `t-${i}`;
 export const formatZoneShort = (zone: string): string => zone.split('—')[0]?.trim() ?? zone;
 export const formatPercentWhole = (n: number): string => `${Math.round(n)}%`;
 export const formatKilo = (n: number): string => n >= 1000 ? `$${(n/1000).toFixed(1)}k` : `$${Math.round(n)}`;
+export const formatPickerCount = (n: number): string => `${n} picker${n === 1 ? '' : 's'}`;
