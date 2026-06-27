@@ -26,3 +26,4 @@ export const opsDanger = "text-red-400";
 export const opsSuccess = "text-lime-400";
 export const opsWarn = "text-amber-400";
 export const opsChip = "inline-flex items-center rounded-md border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-[10px] text-zinc-400";
+export const opsStat = "font-display text-xl font-semibold tabular-nums text-zinc-100";
