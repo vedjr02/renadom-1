@@ -28,3 +28,4 @@ export const opsWarn = "text-amber-400";
 export const opsChip = "inline-flex items-center rounded-md border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-[10px] text-zinc-400";
 export const opsStat = "font-display text-xl font-semibold tabular-nums text-zinc-100";
 export const opsAlert = "rounded-md border border-red-500/30 bg-red-950/40 text-red-300";
+export const opsFocus = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50";
