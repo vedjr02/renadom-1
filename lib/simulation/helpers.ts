@@ -41,3 +41,7 @@ export const pickingRatio = (orders: ActiveOrder[]): number => {
   if (!orders.length) return 0;
   return countByStatus(orders, 'Picking') / orders.length;
 };
+export const dispatchRatio = (orders: ActiveOrder[]): number => {
+  if (!orders.length) return 0;
+  return countByStatus(orders, 'Dispatch') / orders.length;
+};
