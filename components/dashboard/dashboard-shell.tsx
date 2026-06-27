@@ -28,7 +28,7 @@ import { FulfillmentInsights } from "@/components/dashboard/fulfillment-insights
 import { OrderSearchInput } from "@/components/dashboard/order-search-input";
 import { PriorityFilterTabs } from "@/components/dashboard/priority-filter-tabs";
 import { SlaHealthGauge } from "@/components/dashboard/sla-health-gauge";
-import { EXPORT_MOCK_MESSAGE } from "@/lib/dashboard/ui-copy";
+import { EXPORT_MOCK_MESSAGE, FILTER_RESET_HINT } from "@/lib/dashboard/ui-copy";
 import { applyOrderFilters } from "@/lib/dashboard/apply-order-filters";
 import { countBreachedOrders, getFilterMatchRate, getFulfillmentMix, getTotalRevenue } from "@/lib/simulation/selectors";
 import { useLiveClock } from "@/hooks/useLiveClock";
@@ -165,6 +165,9 @@ export function DashboardShell() {
                     Showing {sortedOrders.length} of {activeOrders.length} ({getFilterMatchRate(sortedOrders.length, activeOrders.length)}%) result
                     {sortedOrders.length === 1 ? "" : "s"} for current filters
                   </p>
+                ) : null}
+                {hasQuery || priority !== "All" || category !== "All" || filter !== "All" ? (
+                  <p className="mb-2 text-[10px] text-zinc-600">{FILTER_RESET_HINT}</p>
                 ) : null}
                 <ActiveOrdersTable orders={sortedOrders} lastUpdated={lastUpdated} now={now} compact={compact} />
               </motion.div>
