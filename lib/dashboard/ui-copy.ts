@@ -32,3 +32,4 @@ export const TARGET_SLA_LABEL = "Target ≥ 95%";
 export const MOCK_STREAM_LABEL = "Mock stream active";
 export const SYNC_LABEL = "Last sync";
 export const CLEAR_SEARCH_LABEL = "Clear";
+export const SHIFT_MODE_LABEL = "Shift mode";
