@@ -47,3 +47,5 @@ export const dispatchRatio = (orders: ActiveOrder[]): number => {
 };
 export const countUniqueZones = (orders: ActiveOrder[]): number =>
   new Set(orders.map(o => o.zone)).size;
+export const getOldestOrder = (orders: ActiveOrder[]): ActiveOrder | undefined =>
+  orders.reduce<ActiveOrder | undefined>((old, o) => (!old || o.startedAt < old.startedAt ? o : old), undefined);
