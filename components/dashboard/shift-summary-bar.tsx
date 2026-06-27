@@ -39,7 +39,7 @@ export function ShiftSummaryBar({
       </div>
       <div className="hidden h-10 w-px bg-zinc-800 sm:block" />
       <div>
-        <p className={opsLabel}>Shift Revenue</p>
+        <p className={opsLabel}>{REVENUE_LABEL}</p>
         <p className="font-display mt-1 text-lg font-semibold text-zinc-100">${(revenueTotal / 1000).toFixed(0)}k</p>
       </div>
     </section>
