@@ -36,3 +36,4 @@ export const formatOrderCount = (n: number): string => `${Math.round(n)} order${
 export const formatBreachCount = (n: number): string => `${n} breach${n === 1 ? '' : 'es'}`;
 export const formatSparkLabel = (i: number): string => `t-${i}`;
 export const formatZoneShort = (zone: string): string => zone.split('—')[0]?.trim() ?? zone;
+export const formatPercentWhole = (n: number): string => `${Math.round(n)}%`;
