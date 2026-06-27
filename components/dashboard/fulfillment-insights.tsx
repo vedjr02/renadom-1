@@ -1,5 +1,6 @@
 "use client";
 
+import { FULFILLMENT_NOTE } from "@/lib/dashboard/chart-notes";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface FulfillmentInsightsProps {
@@ -19,7 +20,7 @@ export function FulfillmentInsights({ picking, packing, dispatch }: FulfillmentI
 
   return (
     <section className="ops-card p-5">
-      <p className={opsLabel}>Fulfillment Pipeline</p>
+      <p className={opsLabel}>{FULFILLMENT_NOTE}</p>
       <div className="mt-4 space-y-3">
         {rows.map((row) => (
           <div key={row.label}>
