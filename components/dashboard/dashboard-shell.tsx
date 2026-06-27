@@ -28,7 +28,7 @@ import { FulfillmentInsights } from "@/components/dashboard/fulfillment-insights
 import { OrderSearchInput } from "@/components/dashboard/order-search-input";
 import { PriorityFilterTabs } from "@/components/dashboard/priority-filter-tabs";
 import { SlaHealthGauge } from "@/components/dashboard/sla-health-gauge";
-import { EXPORT_MOCK_MESSAGE, FILTER_RESET_HINT } from "@/lib/dashboard/ui-copy";
+import { EXPORT_MOCK_MESSAGE, EXPORT_SUCCESS_MOCK, FILTER_RESET_HINT } from "@/lib/dashboard/ui-copy";
 import { applyOrderFilters } from "@/lib/dashboard/apply-order-filters";
 import { countBreachedOrders, getFilterMatchRate, getFulfillmentMix, getTotalRevenue } from "@/lib/simulation/selectors";
 import { useLiveClock } from "@/hooks/useLiveClock";
@@ -116,7 +116,7 @@ export function DashboardShell() {
                 <div className="flex flex-wrap items-center gap-3">
                   <SimulationControls paused={paused} onToggle={toggleSimulation} />
                   <CompactModeToggle compact={compact} onToggle={toggleCompact} />
-                  <ExportCsvButton disabled={sortedOrders.length === 0} onClick={() => window.alert(EXPORT_MOCK_MESSAGE)} />
+                  <ExportCsvButton disabled={sortedOrders.length === 0} onClick={() => window.alert(EXPORT_MOCK_MESSAGE, EXPORT_SUCCESS_MOCK)} />
                   {latestHour ? (
                     <ThroughputTicker ordersProcessed={latestHour.ordersProcessed} breaches={latestHour.slaBreaches} />
                   ) : null}
