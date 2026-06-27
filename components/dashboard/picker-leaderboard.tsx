@@ -1,6 +1,7 @@
 "use client";
 
 import type { ActiveOrder } from "@/lib/simulation/types";
+import { PICKER_BOARD_NOTE } from "@/lib/dashboard/chart-notes";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface PickerLeaderboardProps {
@@ -19,7 +20,7 @@ export function PickerLeaderboard({ orders }: PickerLeaderboardProps) {
 
   return (
     <div className="ops-card p-4">
-      <p className={opsLabel}>Top Pickers</p>
+      <p className={opsLabel}>{PICKER_BOARD_NOTE}</p>
       <ul className="mt-3 space-y-2">
         {top.map(([picker, count], index) => (
           <li key={picker} className="flex items-center justify-between text-sm text-zinc-300">
