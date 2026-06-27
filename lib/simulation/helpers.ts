@@ -33,3 +33,7 @@ export const breachRatio = (orders: ActiveOrder[]): number => {
   if (!orders.length) return 0;
   return orders.filter(isBreached).length / orders.length;
 };
+export const vipRatio = (orders: ActiveOrder[]): number => {
+  if (!orders.length) return 0;
+  return orders.filter(isVipOrder).length / orders.length;
+};
