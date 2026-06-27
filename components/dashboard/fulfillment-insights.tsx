@@ -1,6 +1,7 @@
 "use client";
 
 import { FULFILLMENT_NOTE } from "@/lib/dashboard/chart-notes";
+import { DISPATCH_STAGE_LABEL, PACKING_STAGE_LABEL, PICKING_STAGE_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface FulfillmentInsightsProps {
@@ -13,9 +14,9 @@ export function FulfillmentInsights({ picking, packing, dispatch }: FulfillmentI
   const total = Math.max(1, picking + packing + dispatch);
 
   const rows = [
-    { label: "Picking", value: picking, tone: "bg-orange-500" },
-    { label: "Packing", value: packing, tone: "bg-amber-500" },
-    { label: "Dispatch", value: dispatch, tone: "bg-lime-500" },
+    { label: PICKING_STAGE_LABEL, value: picking, tone: "bg-orange-500" },
+    { label: PACKING_STAGE_LABEL, value: packing, tone: "bg-amber-500" },
+    { label: DISPATCH_STAGE_LABEL, value: dispatch, tone: "bg-lime-500" },
   ];
 
   return (
