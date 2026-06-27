@@ -34,3 +34,4 @@ export const SYNC_LABEL = "Last sync";
 export const CLEAR_SEARCH_LABEL = "Clear";
 export const SHIFT_MODE_LABEL = "Shift mode";
 export const NAV_OVERVIEW_DESC = "KPIs, charts, and live order table";
+export const NAV_ORDERS_DESC = "Filtered active order drill-down";
