@@ -2,7 +2,7 @@
 
 import { Activity, BarChart3, Boxes, FileText } from "lucide-react";
 import { NAV_ITEMS } from "@/lib/dashboard/nav-items";
-import { SIDEBAR_TAGLINE } from "@/lib/dashboard/ui-copy";
+import { SHIFT_MODE_LABEL, SIDEBAR_TAGLINE } from "@/lib/dashboard/ui-copy";
 import { opsAccent, opsLabel } from "@/lib/dashboard/ui-theme";
 
 const icons = [Activity, Boxes, BarChart3, FileText] as const;
@@ -35,7 +35,7 @@ export function DashboardSidebar() {
         })}
       </nav>
       <div className="mt-auto rounded-md border border-zinc-800 bg-zinc-900/60 px-3 py-3">
-        <p className={opsLabel}>Shift Mode</p>
+        <p className={opsLabel}>{SHIFT_MODE_LABEL}</p>
         <p className="mt-1 text-xs text-zinc-400">Live simulation · 3 zones</p>
       </div>
     </aside>
