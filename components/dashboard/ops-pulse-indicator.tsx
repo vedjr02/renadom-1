@@ -1,3 +1,4 @@
+import { MOCK_STREAM_LABEL } from "@/lib/dashboard/ui-copy";
 "use client";
 
 interface OpsPulseIndicatorProps {
