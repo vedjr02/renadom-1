@@ -1,6 +1,7 @@
 "use client";
 
 import { COMPLIANCE_LABEL, TARGET_SLA_LABEL } from "@/lib/dashboard/ui-copy";
+import { SLA_TARGET_PERCENT, SLA_WARN_PERCENT } from "@/lib/dashboard/thresholds";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface SlaHealthGaugeProps {
@@ -9,9 +10,9 @@ interface SlaHealthGaugeProps {
 
 export function SlaHealthGauge({ complianceRate }: SlaHealthGaugeProps) {
   const tone =
-    complianceRate >= 95
+    complianceRate >= SLA_TARGET_PERCENT
       ? "text-lime-300 border-lime-500/30 bg-lime-500/10"
-      : complianceRate >= 90
+      : complianceRate >= SLA_WARN_PERCENT
         ? "text-amber-300 border-amber-500/30 bg-amber-500/10"
         : "text-red-300 border-red-500/30 bg-red-500/10";
 
