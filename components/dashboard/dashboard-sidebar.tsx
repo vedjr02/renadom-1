@@ -1,6 +1,7 @@
 "use client";
 
 import { Activity, BarChart3, Boxes, FileText } from "lucide-react";
+import { ARIA_SIDEBAR_ORDERS, ARIA_SIDEBAR_OVERVIEW, ARIA_SIDEBAR_REPORTS, ARIA_SIDEBAR_ZONES } from "@/lib/dashboard/aria-labels";
 import { NAV_ITEMS } from "@/lib/dashboard/nav-items";
 import { SHIFT_MODE_LABEL, SIDEBAR_TAGLINE } from "@/lib/dashboard/ui-copy";
 import { opsAccent, opsLabel } from "@/lib/dashboard/ui-theme";
@@ -22,6 +23,7 @@ export function DashboardSidebar() {
             <button
               key={item.id}
               type="button"
+              aria-label={item.id === "overview" ? ARIA_SIDEBAR_OVERVIEW : item.id === "orders" ? ARIA_SIDEBAR_ORDERS : item.id === "zones" ? ARIA_SIDEBAR_ZONES : ARIA_SIDEBAR_REPORTS}
               className={`flex items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm transition ${
                 item.active
                   ? "border border-orange-500/30 bg-orange-500/10 text-orange-300"
