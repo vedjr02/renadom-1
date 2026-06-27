@@ -1,6 +1,6 @@
 "use client";
 
-import { FOOTER_BUILD_LABEL } from "@/lib/dashboard/ui-copy";
+import { FOOTER_BUILD_LABEL, MOCK_STREAM_LABEL, SYNC_LABEL } from "@/lib/dashboard/ui-copy";
 import { useShiftClock } from "@/hooks/useShiftClock";
 import { KeyboardHints } from "@/components/dashboard/keyboard-hints";
 import { formatShiftElapsed } from "@/lib/formatters";
@@ -26,7 +26,7 @@ export function DashboardFooter({ lastUpdated }: DashboardFooterProps) {
       <span>{FOOTER_BUILD_LABEL}</span>
       <KeyboardHints />
       <span>
-        Last sync {formatHourLabel(lastUpdated || now)} · Mock stream active · Shift {formatShiftElapsed(elapsed)}
+        {SYNC_LABEL} {formatHourLabel(lastUpdated || now)} · {MOCK_STREAM_LABEL} · Shift {formatShiftElapsed(elapsed)}
       </span>
     </motion.footer>
   );
