@@ -27,3 +27,4 @@ export const FILTER_ACTIVE_LABEL = "Filters active";
 export const LIVE_ORDERS_LABEL = "Live orders";
 export const PICKING_STAGE_LABEL = "In picking";
 export const PACKING_STAGE_LABEL = "In packing";
+export const DISPATCH_STAGE_LABEL = "In dispatch";
