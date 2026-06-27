@@ -1,11 +1,13 @@
 "use client";
 
+import { OPS_SCORE_LABEL } from "@/lib/dashboard/ui-copy";
+
 interface PerformanceScoreRingProps {
   score: number;
-  label: string;
+  label?: string;
 }
 
-export function PerformanceScoreRing({ score, label }: PerformanceScoreRingProps) {
+export function PerformanceScoreRing({ score, label = OPS_SCORE_LABEL }: PerformanceScoreRingProps) {
   const clamped = Math.max(0, Math.min(100, score));
 
   return (
