@@ -33,3 +33,4 @@ export const MOCK_STREAM_LABEL = "Mock stream active";
 export const SYNC_LABEL = "Last sync";
 export const CLEAR_SEARCH_LABEL = "Clear";
 export const SHIFT_MODE_LABEL = "Shift mode";
+export const NAV_OVERVIEW_DESC = "KPIs, charts, and live order table";
