@@ -30,3 +30,4 @@ export const PACKING_STAGE_LABEL = "In packing";
 export const DISPATCH_STAGE_LABEL = "In dispatch";
 export const TARGET_SLA_LABEL = "Target ≥ 95%";
 export const MOCK_STREAM_LABEL = "Mock stream active";
+export const SYNC_LABEL = "Last sync";
