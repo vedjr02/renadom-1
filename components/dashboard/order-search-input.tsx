@@ -1,6 +1,6 @@
 "use client";
 
-import { SEARCH_PLACEHOLDER } from "@/lib/dashboard/ui-copy";
+import { CLEAR_SEARCH_LABEL, SEARCH_PLACEHOLDER } from "@/lib/dashboard/ui-copy";
 import { opsInput } from "@/lib/dashboard/ui-theme";
 
 interface OrderSearchInputProps {
