@@ -37,3 +37,7 @@ export const vipRatio = (orders: ActiveOrder[]): number => {
   if (!orders.length) return 0;
   return orders.filter(isVipOrder).length / orders.length;
 };
+export const pickingRatio = (orders: ActiveOrder[]): number => {
+  if (!orders.length) return 0;
+  return countByStatus(orders, 'Picking') / orders.length;
+};
