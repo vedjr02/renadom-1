@@ -1,5 +1,6 @@
 "use client";
 
+import { ZONE_HEATMAP_NOTE } from "@/lib/dashboard/chart-notes";
 import { motion } from "framer-motion";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { zoneAccentColors } from "@/lib/dashboard/zone-colors";
@@ -20,7 +21,7 @@ const zoneShortName = (zone: ZoneLoadMetric["zone"]) => zone.split("—")[0]?.tr
 
 export function ZoneHeatmapStrip({ zones }: ZoneHeatmapStripProps) {
   return (
-    <section className="grid gap-4 md:grid-cols-3">
+    <section aria-label={ZONE_HEATMAP_NOTE} className="grid gap-4 md:grid-cols-3">
       {zones.map((zone, index) => (
         <motion.div
           key={zone.zone}
