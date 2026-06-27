@@ -1,5 +1,6 @@
 "use client";
 
+import { COMPLIANCE_LABEL, TARGET_SLA_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface SlaHealthGaugeProps {
@@ -16,9 +17,9 @@ export function SlaHealthGauge({ complianceRate }: SlaHealthGaugeProps) {
 
   return (
     <div className={`rounded-md border px-4 py-3 ${tone}`}>
-      <p className={opsLabel}>SLA Health</p>
+      <p className={opsLabel}>{COMPLIANCE_LABEL}</p>
       <p className="font-display mt-2 text-2xl font-bold">{complianceRate.toFixed(1)}%</p>
-      <p className="mt-1 text-xs opacity-80">Target ≥ 95%</p>
+      <p className="mt-1 text-xs opacity-80">{TARGET_SLA_LABEL}</p>
     </div>
   );
 }
