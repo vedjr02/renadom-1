@@ -39,3 +39,4 @@ export const formatZoneShort = (zone: string): string => zone.split('—')[0]?.t
 export const formatPercentWhole = (n: number): string => `${Math.round(n)}%`;
 export const formatKilo = (n: number): string => n >= 1000 ? `$${(n/1000).toFixed(1)}k` : `$${Math.round(n)}`;
 export const formatPickerCount = (n: number): string => `${n} picker${n === 1 ? '' : 's'}`;
+export const formatZoneUtil = (pct: number): string => `${Math.round(pct)}% load`;
