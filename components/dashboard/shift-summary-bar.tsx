@@ -34,7 +34,7 @@ export function ShiftSummaryBar({
       </div>
       <div className="hidden h-10 w-px bg-zinc-800 sm:block" />
       <div>
-        <p className={opsLabel}>Active Breaches</p>
+        <p className={opsLabel}>{BREACH_COUNT_LABEL}</p>
         <p className="font-display mt-1 text-lg font-semibold text-amber-400">{breachCount}</p>
       </div>
       <div className="hidden h-10 w-px bg-zinc-800 sm:block" />
