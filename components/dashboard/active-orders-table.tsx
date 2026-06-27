@@ -15,6 +15,7 @@ import { formatSlaCountdown, getSlaProgress } from "@/hooks/useStoreSimulation";
 import { FilterEmptyState } from "@/components/dashboard/filter-empty-state";
 import { OrderStatusBadge } from "@/components/dashboard/order-status-badge";
 import { OrderAgeCell } from "@/components/dashboard/order-age-cell";
+import { PANEL_ACTIVE_ORDERS } from "@/lib/dashboard/panel-titles";
 import { PanelHeader } from "@/components/dashboard/panel-header";
 import { categoryColors } from "@/lib/dashboard/category-colors";
 import { pickerInitials } from "@/lib/dashboard/picker-initials";
@@ -103,7 +104,7 @@ export function ActiveOrdersTable({ orders, lastUpdated, now: nowProp, compact =
   return (
     <section aria-label={ARIA_ORDERS_TABLE} className="ops-card glow-ring overflow-hidden p-6">
       <PanelHeader
-        title="Operational Drill-down"
+        title={PANEL_ACTIVE_ORDERS}
         subtitle="Active pick paths with live 10-minute SLA countdown"
         badge={`${orders.length} tracked`}
       />
