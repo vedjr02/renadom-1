@@ -1,3 +1,4 @@
+import { THROUGHPUT_LABEL } from "@/lib/dashboard/ui-copy";
 "use client";
 
 interface ThroughputTickerProps {
