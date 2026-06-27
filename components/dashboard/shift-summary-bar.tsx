@@ -3,7 +3,7 @@
 import { formatShiftElapsed } from "@/lib/formatters";
 import { getAverageUtilization } from "@/lib/simulation/selectors";
 import type { ZoneLoadMetric } from "@/lib/simulation/types";
-import { SHIFT_LABEL, UTILIZATION_LABEL, COMPLIANCE_LABEL, REVENUE_LABEL } from "@/lib/dashboard/ui-copy";
+import { AVG_UTIL_LABEL, BREACH_COUNT_LABEL, REVENUE_LABEL, SHIFT_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface ShiftSummaryBarProps {
@@ -29,7 +29,7 @@ export function ShiftSummaryBar({
       </div>
       <div className="hidden h-10 w-px bg-zinc-800 sm:block" />
       <div>
-        <p className={opsLabel}>Avg Utilization</p>
+        <p className={opsLabel}>{AVG_UTIL_LABEL}</p>
         <p className="font-display mt-1 text-lg font-semibold text-orange-400">{Math.round(avgUtil)}%</p>
       </div>
       <div className="hidden h-10 w-px bg-zinc-800 sm:block" />
