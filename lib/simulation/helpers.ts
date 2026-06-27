@@ -51,3 +51,5 @@ export const getOldestOrder = (orders: ActiveOrder[]): ActiveOrder | undefined =
   orders.reduce<ActiveOrder | undefined>((old, o) => (!old || o.startedAt < old.startedAt ? o : old), undefined);
 export const isNearBreach = (o: ActiveOrder, now: number): boolean =>
   !o.breached && orderAgeMs(o, now) > 8 * 60 * 1000;
+export const filterByZone = (orders: ActiveOrder[], zone: string): ActiveOrder[] =>
+  orders.filter(o => o.zone === zone);
