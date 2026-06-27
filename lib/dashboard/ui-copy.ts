@@ -25,3 +25,4 @@ export const BREACH_COUNT_LABEL = "Active breaches";
 export const AVG_UTIL_LABEL = "Avg utilization";
 export const FILTER_ACTIVE_LABEL = "Filters active";
 export const LIVE_ORDERS_LABEL = "Live orders";
+export const PICKING_STAGE_LABEL = "In picking";
