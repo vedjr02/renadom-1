@@ -45,3 +45,5 @@ export const dispatchRatio = (orders: ActiveOrder[]): number => {
   if (!orders.length) return 0;
   return countByStatus(orders, 'Dispatch') / orders.length;
 };
+export const countUniqueZones = (orders: ActiveOrder[]): number =>
+  new Set(orders.map(o => o.zone)).size;
