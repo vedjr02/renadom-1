@@ -28,3 +28,4 @@ export const LIVE_ORDERS_LABEL = "Live orders";
 export const PICKING_STAGE_LABEL = "In picking";
 export const PACKING_STAGE_LABEL = "In packing";
 export const DISPATCH_STAGE_LABEL = "In dispatch";
+export const TARGET_SLA_LABEL = "Target ≥ 95%";
