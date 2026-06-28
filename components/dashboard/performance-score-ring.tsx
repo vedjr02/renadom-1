@@ -1,5 +1,6 @@
 "use client";
 
+import { OPS_SCORE_NOTE } from "@/lib/dashboard/chart-notes";
 import { OPS_SCORE_LABEL } from "@/lib/dashboard/ui-copy";
 
 interface PerformanceScoreRingProps {
@@ -23,6 +24,7 @@ export function PerformanceScoreRing({ score, label = OPS_SCORE_LABEL }: Perform
         </div>
       </div>
       <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-500">{label}</p>
+      <p className="max-w-[140px] text-center text-[10px] text-zinc-600">{OPS_SCORE_NOTE}</p>
     </div>
   );
 }
