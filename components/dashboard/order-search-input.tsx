@@ -24,7 +24,7 @@ export function OrderSearchInput({ value, onChange, onClear }: OrderSearchInputP
           onClick={onClear}
           className="text-[10px] uppercase tracking-[0.16em] text-zinc-500 hover:text-zinc-300"
         >
-          Clear
+          {CLEAR_SEARCH_LABEL}
         </button>
       ) : null}
     </div>
