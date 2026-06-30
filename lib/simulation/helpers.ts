@@ -77,3 +77,4 @@ export const packingRatio = (orders: ActiveOrder[]): number => {
   if (!orders.length) return 0;
   return countByStatus(orders, 'Packing') / orders.length;
 };
+export const sortByAge = (a: ActiveOrder, b: ActiveOrder): number => a.startedAt - b.startedAt;
