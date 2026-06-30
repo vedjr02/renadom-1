@@ -16,3 +16,4 @@ export const TOOLBAR_NOTE = "Simulation and filter controls";
 export const MOBILE_NAV_NOTE = "Quick section navigation on small screens";
 // insight batch note 1
 // insight batch note 2
+// insight batch note 3
