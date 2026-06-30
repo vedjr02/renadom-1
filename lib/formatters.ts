@@ -43,3 +43,4 @@ export const formatZoneUtil = (pct: number): string => `${Math.round(pct)}% load
 export const formatTickLabel = (h: number): string => `${h}:00`;
 export const formatRank = (n: number): string => `#${n}`;
 export const formatRisk = (risk: string): string => `${risk} risk`;
+export const formatDeltaPct = (n: number): string => `${n >= 0 ? '+' : ''}${n.toFixed(1)}%`;
