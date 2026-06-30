@@ -59,3 +59,5 @@ export const countNearBreach = (orders: ActiveOrder[], now: number): number =>
   orders.filter(o => isNearBreach(o, now)).length;
 export const countVipOrders = (orders: ActiveOrder[]): number =>
   countByPriority(orders, 'VIP');
+export const getNewestOrder = (orders: ActiveOrder[]): ActiveOrder | undefined =>
+  orders.reduce<ActiveOrder | undefined>((n, o) => (!n || o.startedAt > n.startedAt ? o : n), undefined);
