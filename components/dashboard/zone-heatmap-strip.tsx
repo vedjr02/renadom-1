@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { zoneAccentColors } from "@/lib/dashboard/zone-colors";
 import type { ZoneLoadMetric } from "@/lib/simulation/types";
+import { UTILIZATION_PCT_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface ZoneHeatmapStripProps {
@@ -44,7 +45,7 @@ export function ZoneHeatmapStrip({ zones }: ZoneHeatmapStripProps) {
               <p className="font-display text-2xl font-bold text-zinc-100">
                 <AnimatedNumber value={zone.utilization} format={(n) => `${Math.round(n)}%`} />
               </p>
-              <p className="mt-1 text-xs text-zinc-500">Utilization</p>
+              <p className="mt-1 text-xs text-zinc-500">{UTILIZATION_PCT_LABEL}</p>
             </div>
             <p className="text-xs text-zinc-500">
               <AnimatedNumber value={zone.ordersInZone} format={(n) => `${Math.round(n)}`} /> orders
