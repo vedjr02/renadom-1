@@ -15,3 +15,4 @@ export const METRIC_DISPATCH = "dispatch_count";
 export const METRIC_EXPRESS = "express_orders";
 export const METRIC_VIP = "vip_orders";
 export const METRIC_NEAR_BREACH = "near_breach_orders";
+export const METRIC_VIP_RATIO = "vip_ratio";
