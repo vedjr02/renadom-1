@@ -73,3 +73,7 @@ export const standardRatio = (orders: ActiveOrder[]): number => {
   if (!orders.length) return 0;
   return countByPriority(orders, 'Standard') / orders.length;
 };
+export const packingRatio = (orders: ActiveOrder[]): number => {
+  if (!orders.length) return 0;
+  return countByStatus(orders, 'Packing') / orders.length;
+};
