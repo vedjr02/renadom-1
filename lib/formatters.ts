@@ -41,3 +41,4 @@ export const formatKilo = (n: number): string => n >= 1000 ? `$${(n/1000).toFixe
 export const formatPickerCount = (n: number): string => `${n} picker${n === 1 ? '' : 's'}`;
 export const formatZoneUtil = (pct: number): string => `${Math.round(pct)}% load`;
 export const formatTickLabel = (h: number): string => `${h}:00`;
+export const formatRank = (n: number): string => `#${n}`;
