@@ -43,3 +43,4 @@ export const TOP_PICKERS_LABEL = "Top performers";
 export const PIPELINE_LABEL = "Fulfillment pipeline";
 export const LIVE_BADGE_LABEL = "Live";
 export const PAUSED_BADGE_LABEL = "Paused";
+export const EXPORT_BTN_LABEL = "Export CSV";
