@@ -35,3 +35,4 @@ export const opsRiskHigh = "text-red-400 border-red-500/30 bg-red-500/10";
 export const opsRiskMed = "text-amber-400 border-amber-500/30 bg-amber-500/10";
 export const opsRiskLow = "text-lime-400 border-lime-500/30 bg-lime-500/10";
 export const opsToolbar = "ops-card mb-5 flex flex-wrap items-center gap-3 p-4";
+export const opsInline = "inline-flex items-center gap-2";
