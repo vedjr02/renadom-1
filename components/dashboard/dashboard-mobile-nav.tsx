@@ -1,10 +1,11 @@
 "use client";
 
+import { MOBILE_NAV_NOTE } from "@/lib/dashboard/chart-notes";
 import { NAV_ITEMS } from "@/lib/dashboard/nav-items";
 
 export function DashboardMobileNav() {
   return (
-    <nav className="mb-4 flex gap-2 overflow-x-auto pb-1 lg:hidden">
+    <nav aria-label={MOBILE_NAV_NOTE} className="mb-4 flex gap-2 overflow-x-auto pb-1 lg:hidden">
       {NAV_ITEMS.map((item) => (
         <button
           key={item.id}
