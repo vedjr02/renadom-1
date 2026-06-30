@@ -39,3 +39,4 @@ export const ORDERS_TRACKED_LABEL = "Orders tracked";
 export const RISK_LABEL = "Breach risk";
 export const UTILIZATION_PCT_LABEL = "Utilization";
 export const ORDERS_IN_ZONE_LABEL = "Orders in zone";
+export const TOP_PICKERS_LABEL = "Top performers";
