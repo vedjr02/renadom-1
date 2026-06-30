@@ -1,6 +1,7 @@
 "use client";
 
 import { ARIA_EXPORT_CSV } from "@/lib/dashboard/aria-labels";
+import { EXPORT_BTN_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsBtn } from "@/lib/dashboard/ui-theme";
 
 interface ExportCsvButtonProps {
