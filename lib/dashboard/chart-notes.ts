@@ -12,3 +12,4 @@ export const SLA_TIMER_NOTE = "Countdown to 10-minute SLA window";
 export const ORDER_AGE_NOTE = "Time since pick path started";
 export const LEADERBOARD_RANK_NOTE = "Ranked by active order count";
 export const SHIFT_SUMMARY_NOTE = "Aggregated shift operational metrics";
+export const TOOLBAR_NOTE = "Simulation and filter controls";
