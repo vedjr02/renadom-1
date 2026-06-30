@@ -1,3 +1,4 @@
+import { LIVE_BADGE_LABEL } from "@/lib/dashboard/ui-copy";
 export function LiveBadge() {
   return (
     <span className="inline-flex items-center gap-2 rounded-md border border-lime-500/30 bg-lime-500/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-lime-300">
