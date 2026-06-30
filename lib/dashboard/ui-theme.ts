@@ -32,3 +32,4 @@ export const opsFocus = "focus-visible:outline-none focus-visible:ring-2 focus-v
 export const opsScroll = "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden";
 export const opsRank = "font-mono text-xs tabular-nums text-zinc-600";
 export const opsRiskHigh = "text-red-400 border-red-500/30 bg-red-500/10";
+export const opsRiskMed = "text-amber-400 border-amber-500/30 bg-amber-500/10";
