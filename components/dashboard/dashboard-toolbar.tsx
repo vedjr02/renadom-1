@@ -1,5 +1,7 @@
 "use client";
 
+import { TOOLBAR_NOTE } from "@/lib/dashboard/chart-notes";
+
 interface DashboardToolbarProps {
   children: React.ReactNode;
 }
