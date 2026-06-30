@@ -41,3 +41,4 @@ export const UTILIZATION_PCT_LABEL = "Utilization";
 export const ORDERS_IN_ZONE_LABEL = "Orders in zone";
 export const TOP_PICKERS_LABEL = "Top performers";
 export const PIPELINE_LABEL = "Fulfillment pipeline";
+export const LIVE_BADGE_LABEL = "Live";
