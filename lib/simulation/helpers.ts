@@ -65,3 +65,7 @@ export const averagePickerLoad = (orders: ActiveOrder[]): number => {
   const pickers = getUniquePickers(orders);
   return pickers.length ? orders.length / pickers.length : 0;
 };
+export const maxOrderAgeMin = (orders: ActiveOrder[], now: number): number => {
+  if (!orders.length) return 0;
+  return Math.max(...orders.map(o => orderAgeMs(o, now))) / 60000;
+};
