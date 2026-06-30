@@ -1,5 +1,6 @@
 "use client";
 
+import { SORT_BY_LABEL } from "@/lib/dashboard/ui-copy";
 import type { OrderSortKey } from "@/hooks/useSortedOrders";
 import { opsBtn, opsBtnActive } from "@/lib/dashboard/ui-theme";
 
@@ -16,7 +17,8 @@ const options: { key: OrderSortKey; label: string }[] = [
 
 export function OrderSortControls({ value, onChange }: OrderSortControlsProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap items-center gap-2">
+      <span className="text-[10px] uppercase tracking-wider text-zinc-600">{SORT_BY_LABEL}</span>
       {options.map((option) => (
         <button
           key={option.key}
