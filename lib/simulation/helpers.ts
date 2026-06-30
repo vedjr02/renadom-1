@@ -55,3 +55,5 @@ export const filterByZone = (orders: ActiveOrder[], zone: string): ActiveOrder[]
   orders.filter(o => o.zone === zone);
 export const filterBreached = (orders: ActiveOrder[]): ActiveOrder[] =>
   orders.filter(isBreached);
+export const countNearBreach = (orders: ActiveOrder[], now: number): number =>
+  orders.filter(o => isNearBreach(o, now)).length;
