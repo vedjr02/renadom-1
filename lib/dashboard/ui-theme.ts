@@ -31,3 +31,4 @@ export const opsAlert = "rounded-md border border-red-500/30 bg-red-950/40 text-
 export const opsFocus = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50";
 export const opsScroll = "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden";
 export const opsRank = "font-mono text-xs tabular-nums text-zinc-600";
+export const opsRiskHigh = "text-red-400 border-red-500/30 bg-red-500/10";
