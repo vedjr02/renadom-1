@@ -37,3 +37,4 @@ export const NAV_OVERVIEW_DESC = "KPIs, charts, and live order table";
 export const NAV_ORDERS_DESC = "Filtered active order drill-down";
 export const ORDERS_TRACKED_LABEL = "Orders tracked";
 export const RISK_LABEL = "Breach risk";
+export const UTILIZATION_PCT_LABEL = "Utilization";
