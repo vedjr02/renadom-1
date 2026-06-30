@@ -1,5 +1,6 @@
 "use client";
 
+import { ARIA_SEARCH_ORDERS } from "@/lib/dashboard/aria-labels";
 import { CLEAR_SEARCH_LABEL, SEARCH_PLACEHOLDER } from "@/lib/dashboard/ui-copy";
 import { opsInput } from "@/lib/dashboard/ui-theme";
 
@@ -13,6 +14,7 @@ export function OrderSearchInput({ value, onChange, onClear }: OrderSearchInputP
   return (
     <div className="flex items-center gap-2">
       <input
+        aria-label={ARIA_SEARCH_ORDERS}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={SEARCH_PLACEHOLDER}
