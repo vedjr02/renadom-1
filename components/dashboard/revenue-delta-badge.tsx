@@ -2,6 +2,8 @@
 
 import { formatDelta } from "@/lib/formatters";
 
+import { REVENUE_DELTA_NOTE } from "@/lib/dashboard/chart-notes";
+
 interface RevenueDeltaBadgeProps {
   delta: number;
 }
@@ -17,5 +19,6 @@ export function RevenueDeltaBadge({ delta }: RevenueDeltaBadgeProps) {
     >
       {formatDelta(delta, "%")} shift
     </span>
+      <span className="sr-only">{REVENUE_DELTA_NOTE}</span>
   );
 }
