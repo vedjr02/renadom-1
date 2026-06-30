@@ -45,3 +45,4 @@ export const formatRank = (n: number): string => `#${n}`;
 export const formatRisk = (risk: string): string => `${risk} risk`;
 export const formatDeltaPct = (n: number): string => `${n >= 0 ? '+' : ''}${n.toFixed(1)}%`;
 export const formatHour = (h: number): string => `${String(h).padStart(2, '0')}:00`;
+export const formatMsToSec = (ms: number): string => `${Math.round(ms / 1000)}s`;
