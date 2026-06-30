@@ -61,3 +61,7 @@ export const countVipOrders = (orders: ActiveOrder[]): number =>
   countByPriority(orders, 'VIP');
 export const getNewestOrder = (orders: ActiveOrder[]): ActiveOrder | undefined =>
   orders.reduce<ActiveOrder | undefined>((n, o) => (!n || o.startedAt > n.startedAt ? o : n), undefined);
+export const averagePickerLoad = (orders: ActiveOrder[]): number => {
+  const pickers = getUniquePickers(orders);
+  return pickers.length ? orders.length / pickers.length : 0;
+};
