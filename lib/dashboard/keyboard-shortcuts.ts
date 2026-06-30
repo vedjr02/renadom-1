@@ -4,4 +4,5 @@ export const KEYBOARD_SHORTCUTS = [
   { keys: "C", action: "Toggle compact table density" },
   { keys: "E", action: "Export filtered orders to CSV" },
   { keys: "R", action: "Reset all active filters" },
+  { keys: "1", action: "Focus zone filter All" },
 ];
