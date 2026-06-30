@@ -1,7 +1,6 @@
 "use client";
 
-import { FULFILLMENT_NOTE } from "@/lib/dashboard/chart-notes";
-import { DISPATCH_STAGE_LABEL, PIPELINE_LABEL,, PACKING_STAGE_LABEL, PICKING_STAGE_LABEL } from "@/lib/dashboard/ui-copy";
+import { DISPATCH_STAGE_LABEL, PACKING_STAGE_LABEL, PICKING_STAGE_LABEL, PIPELINE_LABEL } from "@/lib/dashboard/ui-copy";
 import { opsLabel } from "@/lib/dashboard/ui-theme";
 
 interface FulfillmentInsightsProps {

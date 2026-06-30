@@ -6,7 +6,7 @@ export function LiveBadge() {
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400 opacity-70" />
         <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-lime-400" />
       </span>
-      Live
+      {LIVE_BADGE_LABEL}
     </span>
   );
 }
