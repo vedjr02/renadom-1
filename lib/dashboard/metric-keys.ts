@@ -19,3 +19,4 @@ export const METRIC_VIP_RATIO = "vip_ratio";
 export const METRIC_EXPRESS_RATIO = "express_ratio";
 export const METRIC_AVG_AGE = "avg_order_age";
 export const METRIC_UNIQUE_PICKERS = "unique_pickers";
+export const METRIC_ZONE_COUNT = "active_zones";
