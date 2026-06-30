@@ -8,3 +8,4 @@ export const KPI_TREND_NOTE = "Sparklines update every simulation tick";
 export const FILTER_MATCH_NOTE = "Percentage of orders matching active filters";
 export const REVENUE_DELTA_NOTE = "Shift-over-shift revenue delta";
 export const ZONE_RISK_NOTE = "Risk band from utilization pressure";
+export const SLA_TIMER_NOTE = "Countdown to 10-minute SLA window";
