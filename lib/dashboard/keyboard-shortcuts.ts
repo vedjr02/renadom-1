@@ -5,4 +5,5 @@ export const KEYBOARD_SHORTCUTS = [
   { keys: "E", action: "Export filtered orders to CSV" },
   { keys: "R", action: "Reset all active filters" },
   { keys: "1", action: "Focus zone filter All" },
+  { keys: "2", action: "Sort orders by SLA urgency" },
 ];
